@@ -15,9 +15,18 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GetComponent<Animator>().SetTrigger("Attack");
+        }
+    }
+
     // FixedUpdate is called once per frame, but at a fixed interval - better for physics calculations
     void FixedUpdate()
     {
+        
         // Horizontal movement (A/D keys)
         float moveX = Input.GetAxis("Horizontal");
 
@@ -26,5 +35,15 @@ public class PlayerMovement : MonoBehaviour
 
         // Apply the force to the Rigidbody2D
         rb.velocity = new Vector2(moveX * speed, moveY * speed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
     }
 }
