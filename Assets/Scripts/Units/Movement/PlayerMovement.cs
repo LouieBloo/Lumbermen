@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f; // You can adjust this speed in the Unity editor.
 
-    public SpriteRenderer bodySpriteRenderer;
+    public SpriteRenderer[] spritesToFlipWhenChangeDirection;
     public Animator animator;
 
     private Rigidbody2D rb;
@@ -55,11 +55,23 @@ public class PlayerMovement : MonoBehaviour
 
             if (moveX < 0)
             {
-                bodySpriteRenderer.flipX = true;
+                foreach(SpriteRenderer renderer in spritesToFlipWhenChangeDirection)
+                {
+                    //renderer.flipX = true;
+                    
+                }
+
+                animator.SetBool("FacingEast", false);
             }
             else if (moveX > 0) // Flip it back if moving right
             {
-                bodySpriteRenderer.flipX = false;
+                foreach (SpriteRenderer renderer in spritesToFlipWhenChangeDirection)
+                {
+                    //renderer.flipX = false;
+                    
+                }
+
+                animator.SetBool("FacingEast", true);
             }
         }
         else
