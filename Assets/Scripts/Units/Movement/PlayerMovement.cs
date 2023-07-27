@@ -6,10 +6,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5.0f; // You can adjust this speed in the Unity editor.
 
-    public SpriteRenderer[] spritesToFlipWhenChangeDirection;
+    public Transform bodyDirectionFlipper;
     public Animator animator;
 
     private Rigidbody2D rb;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +23,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetTrigger("Attack");
-        }
+        }*/
     }
 
     // FixedUpdate is called once per frame, but at a fixed interval - better for physics calculations
@@ -55,20 +56,18 @@ public class PlayerMovement : MonoBehaviour
 
             if (moveX < 0)
             {
-                foreach(SpriteRenderer renderer in spritesToFlipWhenChangeDirection)
+                if(bodyDirectionFlipper.localScale.x > 0)
                 {
-                    //renderer.flipX = true;
-                    
+                    bodyDirectionFlipper.localScale = new Vector3(-bodyDirectionFlipper.localScale.x, bodyDirectionFlipper.localScale.y, bodyDirectionFlipper.localScale.z);
                 }
 
                 animator.SetBool("FacingEast", false);
             }
             else if (moveX > 0) // Flip it back if moving right
             {
-                foreach (SpriteRenderer renderer in spritesToFlipWhenChangeDirection)
+                if (bodyDirectionFlipper.localScale.x < 0)
                 {
-                    //renderer.flipX = false;
-                    
+                    bodyDirectionFlipper.localScale = new Vector3(-bodyDirectionFlipper.localScale.x, bodyDirectionFlipper.localScale.y, bodyDirectionFlipper.localScale.z);
                 }
 
                 animator.SetBool("FacingEast", true);
@@ -80,9 +79,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
