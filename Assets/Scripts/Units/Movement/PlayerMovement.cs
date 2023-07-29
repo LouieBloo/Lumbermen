@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public enum Direction { North, South, East, West, NotMoving }
+    public Direction currentDirection = Direction.NotMoving;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +25,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
-            animator.SetTrigger("Attack");
-        }*/
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            GridPathfinding.Instance.fillCell(worldPosition);
+        }
     }
 
     // FixedUpdate is called once per frame, but at a fixed interval - better for physics calculations
@@ -44,6 +47,28 @@ public class PlayerMovement : MonoBehaviour
         // Apply the velocity to the Rigidbody2D
         rb.velocity = movement * speed;
 
+        // Update the direction based on movement
+        if (moveY > 0)
+        {
+            currentDirection = Direction.North;
+        }
+        else if (moveY < 0)
+        {
+            currentDirection = Direction.South;
+        }
+        else if (moveX > 0)
+        {
+            currentDirection = Direction.East;
+        }
+        else if (moveX < 0)
+        {
+            currentDirection = Direction.West;
+        }
+        else
+        {
+            //currentDirection = Direction.NotMoving;
+        }
+
         // If there's input from the player (the player is moving), rotate the player to face the direction of movement
         if (movement.sqrMagnitude > 0)
         {
@@ -54,23 +79,20 @@ public class PlayerMovement : MonoBehaviour
             //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             animator.SetBool("IsWalking", true);
 
-            if (moveX < 0)
-            {
-                if(bodyDirectionFlipper.localScale.x > 0)
-                {
-                    bodyDirectionFlipper.localScale = new Vector3(-bodyDirectionFlipper.localScale.x, bodyDirectionFlipper.localScale.y, bodyDirectionFlipper.localScale.z);
-                }
-
-                animator.SetBool("FacingEast", false);
-            }
-            else if (moveX > 0) // Flip it back if moving right
+            // Handle sprite flipping based on current direction
+            if (currentDirection == Direction.East)
             {
                 if (bodyDirectionFlipper.localScale.x < 0)
                 {
                     bodyDirectionFlipper.localScale = new Vector3(-bodyDirectionFlipper.localScale.x, bodyDirectionFlipper.localScale.y, bodyDirectionFlipper.localScale.z);
                 }
-
-                animator.SetBool("FacingEast", true);
+            }
+            else if (currentDirection == Direction.West)
+            {
+                if (bodyDirectionFlipper.localScale.x > 0)
+                {
+                    bodyDirectionFlipper.localScale = new Vector3(-bodyDirectionFlipper.localScale.x, bodyDirectionFlipper.localScale.y, bodyDirectionFlipper.localScale.z);
+                }
             }
         }
         else

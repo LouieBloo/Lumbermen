@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 1125982026271951661}
   - component: {fileID: 1551026905561167371}
   - component: {fileID: 3655980051714746469}
+  - component: {fileID: 3411438631300122513}
   - component: {fileID: 1443324524972178526}
   - component: {fileID: 2111631947048742442}
   - component: {fileID: 5578161161198587290}
@@ -139,6 +140,7 @@ MonoBehaviour:
   speed: 5
   bodyDirectionFlipper: {fileID: 7169006861461544283}
   animator: {fileID: 0}
+  currentDirection: 4
 --- !u!114 &1551026905561167371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,8 +154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 1
-  attackRadius: 1
+  attackRadius: 0.3
   attackSpeed: 1
+  damage: 10
   autoAttackTurnOnRadius: 5
   animator: {fileID: 2111631947048742442}
   rigidbody: {fileID: 1443324524972178526}
@@ -171,6 +174,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+--- !u!114 &3411438631300122513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548227521053247028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec1144bdc4281e44aa0750a65bde974f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enabled: 1
+  damage: 10
+  damageTickRate: 1
+  castRadius: 1
+  numberOfTreesToTakeDamage: 8
 --- !u!50 &1443324524972178526
 Rigidbody2D:
   serializedVersion: 4

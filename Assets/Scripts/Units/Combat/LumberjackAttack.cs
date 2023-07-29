@@ -27,13 +27,15 @@ public class LumberjackAttack : MonoBehaviour
     private float lastCastDistance;
     private Vector2 lastCastOrigin;
 
-    
+    private Vector2 lastMovementDirection;
 
     // Start is called before the first frame update
     void Start()
     {
         playerLayer = LayerMask.NameToLayer("Player");
         treeLayer = LayerMask.GetMask("Trees");
+
+        lastMovementDirection = Vector2.zero;
     }
 
     // Update is called once per frame
@@ -44,6 +46,12 @@ public class LumberjackAttack : MonoBehaviour
         if (canAttack())    
         {
             attack();
+        }
+        Vector2 moveDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+
+        if (moveDirection.sqrMagnitude > 0)
+        {
+            lastMovementDirection = moveDirection;
         }
     }
 
@@ -58,11 +66,10 @@ public class LumberjackAttack : MonoBehaviour
         attackTimer = 0;
 
         // Get the direction to the collider we collided with
-        Vector2 direction = rigidbody.velocity.normalized;
-
-
+        //Vector2 direction = rigidbody.velocity.normalized;
+        
         // Store values for gizmo drawing
-        lastCastDirection = direction;
+        lastCastDirection = lastMovementDirection;
         lastCastRadius = attackRadius; // Set this to whatever radius you want
         lastCastDistance = attackRange; // Set this to whatever distance you want
         lastCastOrigin = transform.position;

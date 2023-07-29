@@ -17,11 +17,94 @@ public class GridPathfinding : MonoBehaviour
 
     private float[,] grid;
 
+    public static GridPathfinding Instance { get; private set; }
+
+    private System.Random rand = new System.Random();
+
+    private void Awake()
+    {
+        // Singleton setup
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         grid = new float[width,height];
         //grid[40, 37] = -1;
+    }
+
+    public (int, int) FindNearestNonZeroCell( Vector2 position)
+    {
+        Vector2 gridPos = worldPointToGridPoint(position);
+        int maxDistance = Mathf.Max(grid.GetLength(0), grid.GetLength(1));
+        
+        for (int currentDistance = 1; currentDistance <= maxDistance; currentDistance++)
+        {
+            List<(int, int)> validCells = new List<(int, int)>();
+            for (int x = 0; x < grid.GetLength(1); x++)
+            {
+                for (int y = 0; y < grid.GetLength(0); y++)
+                {
+                    float distance = Mathf.Sqrt(Mathf.Pow(x - gridPos.x, 2) + Mathf.Pow(y - gridPos.y, 2));
+
+                    if (distance <= currentDistance && grid[y,x] != -1)
+                    {
+                        validCells.Add((x, y));
+                    }
+                }
+            }
+
+            if (validCells.Count > 0)
+            {
+                // Choose a random cell from the list and return it
+                (int,int) chosenCell = validCells[rand.Next(validCells.Count)];
+                chosenCell.Item1 -= xOffset;
+                chosenCell.Item2 -= yOffset;
+                return chosenCell;
+            }
+        }
+
+        // If there are no non-zero cells, return an invalid index
+        return (-99999, -99999);
+    }
+
+    public bool isCellOpen(Vector2 position)
+    {
+        Vector2 gridPoint = worldPointToGridPoint(position);
+        if (grid[(int)gridPoint.y,(int)gridPoint.x] == 0)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool fillCell(Vector2 position)
+    {
+        if (isCellOpen(position))
+        {
+            Vector2 gridPoint = worldPointToGridPoint(position);
+            grid[(int)gridPoint.y, (int)gridPoint.x] = -1;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void emptyCell(Vector2 position)
+    {
+        Vector2 gridPoint = worldPointToGridPoint(position);
+        grid[(int)gridPoint.y, (int)gridPoint.x] = 0;
     }
 
     public (int,int)[] findPath(Vector2 startingPosition, Vector2 goalPosition)
