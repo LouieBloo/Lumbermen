@@ -36,7 +36,7 @@ public class TreeSpawner : MonoBehaviour
 
     void spawnTree()
     {
-        (int,int) position = GridPathfinding.Instance.FindNearestNonZeroCell(new Vector2(0,0));
+        (int,int) position = UnitGrid.Instance.findNearestCellForSprout(new Vector2(0,0));
         if(position.Item1 == -99999 && position.Item2 == -99999)
         {
             Debug.Log("Tree spawn couldnt find open pos!");
@@ -44,8 +44,8 @@ public class TreeSpawner : MonoBehaviour
         else
         {
             //Debug.Log(position);
-            GridPathfinding.Instance.fillCell(new Vector2(position.Item1,position.Item2));
-            Instantiate(AllUnitPrefabs.Instance.allTrees[0].prefab,new Vector2(position.Item1,position.Item2),Quaternion.identity);
+            GameObject newSprout = Instantiate(AllUnitPrefabs.Instance.sprout, new Vector2(position.Item1, position.Item2), Quaternion.identity);
+            UnitGrid.Instance.fillCell(new Vector2(position.Item1,position.Item2), newSprout,UnitGrid.UnitTypes.Sprout,true);
         }
 
         spawnTimer= 0;

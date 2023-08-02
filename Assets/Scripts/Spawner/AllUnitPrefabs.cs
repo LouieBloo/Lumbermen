@@ -16,6 +16,8 @@ public class AllUnitPrefabs : MonoBehaviour
 
     public Trees[] allTrees;
 
+    public GameObject sprout;
+
     private void Awake()
     {
         // Singleton setup

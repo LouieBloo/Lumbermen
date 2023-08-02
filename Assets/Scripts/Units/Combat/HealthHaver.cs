@@ -7,6 +7,7 @@ public class HealthHaver : MonoBehaviour
 
     public float maxHealth;
     public float currentHealth;
+    public AudioSource hurtAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,10 @@ public class HealthHaver : MonoBehaviour
 
     void die()
     {
+        IDier dier = this.gameObject.GetComponent<IDier>();
+        if (dier != null) { 
+            dier.die();
+        }
         Destroy(this.gameObject);
     }
 
@@ -23,9 +28,13 @@ public class HealthHaver : MonoBehaviour
     {
         currentHealth -= damage;
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             die();
+        }
+        else if (hurtAudioSource != null)
+        {
+            hurtAudioSource.Play();
         }
 
         return damage;

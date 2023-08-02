@@ -14,8 +14,8 @@ TagManager:
   - UI
   - Trees
   - Enemies
-  - 
-  - 
+  - Sprouts
+  - Pickups
   - 
   - 
   - 
@@ -42,6 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Trees
+    uniqueID: 4118812837
+    locked: 0
   - name: Player
     uniqueID: 2467265737
+    locked: 0
+  - name: Pickups
+    uniqueID: 1475964063
     locked: 0
