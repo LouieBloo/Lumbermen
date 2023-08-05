@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using MidniteOilSoftware;
 using UnityEngine;
 
-public class Sprout : MonoBehaviour
+public class Sprout : MonoBehaviour, IDespawnedPoolObject, IRetrievedPoolObject, IDier
 {
     public float timeBetweenSprites = 5f;
     private float totalRespawnTimer = 0f;
     public GameObject treeToSpawn;
     public GameObject[] sprites;
     private int currentSpriteIndex = 0;
-    
+
+    bool alive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,8 @@ public class Sprout : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!alive) { return; }
+
         totalRespawnTimer += Time.deltaTime;
 
         if(totalRespawnTimer >= timeBetweenSprites)
@@ -34,7 +38,8 @@ public class Sprout : MonoBehaviour
         currentSpriteIndex += 1;
         if(currentSpriteIndex >= sprites.Length)
         {
-            Instantiate(treeToSpawn,transform.position,Quaternion.identity);
+            //Instantiate(treeToSpawn,transform.position,Quaternion.identity);
+            die();
             //Destroy(this.gameObject);
         }
         else
@@ -44,4 +49,27 @@ public class Sprout : MonoBehaviour
         }
     }
 
+    public void ReturnedToPool()
+    {
+        //throw new System.NotImplementedException();
+        alive = false;
+    }
+
+    public void RetrievedFromPool(GameObject prefab)
+    {
+        //throw new System.NotImplementedException();
+        alive = true;
+
+        totalRespawnTimer = 0;
+        //sprites[currentSpriteIndex].gameObject.SetActive(false);
+        currentSpriteIndex = 0;
+        sprites[currentSpriteIndex].gameObject.SetActive(true);
+    }
+
+    public void die()
+    {
+        GameObject tree = ObjectPoolManager.SpawnGameObject(treeToSpawn, transform.position, Quaternion.identity);
+        tree.GetComponent<Tree>().setup();
+        ObjectPoolManager.DespawnGameObject(this.gameObject);
+    }
 }

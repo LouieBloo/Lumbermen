@@ -7,37 +7,48 @@ public class HealthHaver : MonoBehaviour
 
     public float maxHealth;
     public float currentHealth;
-    public AudioSource hurtAudioSource;
+    public float hurtAudioClipVolume = 0.8f;
+    public AudioClip hurtAudioClip;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     void die()
     {
         IDier dier = this.gameObject.GetComponent<IDier>();
-        if (dier != null) { 
+        if (dier != null) {
             dier.die();
         }
-        Destroy(this.gameObject);
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        
     }
 
     public float takeDamage(float damage)
     {
         currentHealth -= damage;
+        playDamageSound();
 
         if (currentHealth <= 0)
         {
             die();
         }
-        else if (hurtAudioSource != null)
-        {
-            hurtAudioSource.Play();
-        }
+        
 
         return damage;
+    }
+
+    void playDamageSound()
+    {
+        if (hurtAudioClip != null)
+        {
+            AudioSource.PlayClipAtPoint(hurtAudioClip, transform.position, hurtAudioClipVolume);
+        }
     }
 
 }

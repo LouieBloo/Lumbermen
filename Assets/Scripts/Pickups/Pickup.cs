@@ -4,5 +4,6 @@ using UnityEngine;
 
 public abstract class Pickup : MonoBehaviour
 {
+    public int capacitySpace;
     public abstract void pickedUp(GameObject pickerUpper);
 }

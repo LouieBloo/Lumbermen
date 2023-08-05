@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using MidniteOilSoftware;
 using UnityEngine;
 
 public class TreeSpawner : MonoBehaviour
@@ -44,8 +45,9 @@ public class TreeSpawner : MonoBehaviour
         else
         {
             //Debug.Log(position);
-            GameObject newSprout = Instantiate(AllUnitPrefabs.Instance.sprout, new Vector2(position.Item1, position.Item2), Quaternion.identity);
-            UnitGrid.Instance.fillCell(new Vector2(position.Item1,position.Item2), newSprout,UnitGrid.UnitTypes.Sprout,true);
+            //GameObject newSprout = Instantiate(AllUnitPrefabs.Instance.sprout, new Vector2(position.Item1, position.Item2), Quaternion.identity);
+            GameObject newSprout = ObjectPoolManager.SpawnGameObject(AllUnitPrefabs.Instance.sprout, new Vector2(position.Item1, position.Item2), Quaternion.identity);
+            UnitGrid.Instance.fillCell(new Vector2(position.Item1,position.Item2), newSprout,UnitGrid.UnitTypes.Sprout);
         }
 
         spawnTimer= 0;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class UnitGrid : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class UnitGrid : MonoBehaviour
 
     public enum UnitTypes
     {
-        Empty,Tree, Sprout,Stump
+        Empty, Tree, Sprout, Stump
     }
 
     public class GridCell
@@ -38,6 +39,16 @@ public class UnitGrid : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 gridPoint = worldPointToGridPoint(worldPosition);
+            Debug.Log(grid[(int)gridPoint.x, (int)gridPoint.y].unitType);
+        }
+    }
+
     void Start()
     {
         grid = new GridCell[width, height];
@@ -58,15 +69,22 @@ public class UnitGrid : MonoBehaviour
         return grid[(int)gridPoint.x, (int)gridPoint.y].unitType == UnitTypes.Empty;
     }
 
-    public void fillCell(Vector2 position, GameObject gameObject, UnitTypes unitType, bool deleteCell)
+    public void fillCell(Vector2 position, GameObject gameObject, UnitTypes unitType)
     {
         Vector2 gridPoint = worldPointToGridPoint(position);
 
-        if(deleteCell && grid[(int)gridPoint.x, (int)gridPoint.y].gameObject != null)
+        /*if(deleteCell && grid[(int)gridPoint.x, (int)gridPoint.y].gameObject != null)
         {
-            Destroy(grid[(int)gridPoint.x, (int)gridPoint.y].gameObject);
-        }
-
+            IDier dier = grid[(int)gridPoint.x, (int)gridPoint.y].gameObject.GetComponent<IDier>();
+            if(dier != null)
+            {
+                dier.die();
+            }
+            else
+            {
+                Destroy(grid[(int)gridPoint.x, (int)gridPoint.y].gameObject);
+            }
+        }*/
 
         grid[(int)gridPoint.x, (int)gridPoint.y].unitType = unitType;
         grid[(int)gridPoint.x, (int)gridPoint.y].gameObject = gameObject;
