@@ -2,29 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using DamageNumbersPro;
 using UnityEngine;
+using static StorageContainer;
+using static UnityEditor.Progress;
 
 public class Backpack : MonoBehaviour
 {
     public int maxCapacity = 100;
-    private int currentCapacity = 0;
 
     public DamageNumberGUI warningPrefabText;
 
     private float backpackFullWarningTimer = 10f;
     private float backpackFullWarningDelay = 10f;
 
-    private List<BackPackItem> items = new List<BackPackItem>();
+    private StorageContainer container = new StorageContainer();
 
-    public class BackPackItem
+    private void Start()
     {
-        public int capacitySpace;
-        public string name;
-
-        public BackPackItem(int capacitySpace, string name)
-        {
-            this.capacitySpace = capacitySpace;
-            this.name = name;
-        }
+        container.maxCapacity = maxCapacity;
     }
 
     private void Update()
@@ -32,17 +26,10 @@ public class Backpack : MonoBehaviour
         backpackFullWarningTimer += Time.deltaTime;
     }
 
-    public bool canAddItem(BackPackItem item)
+    public bool addItem(StorageItem item)
     {
-        return currentCapacity + item.capacitySpace <= maxCapacity;
-    }
-
-    public bool addItem(BackPackItem item)
-    {
-        if(canAddItem(item))
+        if (container.addItem(item))
         {
-            items.Add(item);
-            currentCapacity += item.capacitySpace;
             return true;
         }
         else
@@ -52,6 +39,17 @@ public class Backpack : MonoBehaviour
 
         return false;
     }
+
+    public List<StorageItem> grabItemsByName(string itemName)
+    {
+        return container.grabItemsByName(itemName);
+    }
+
+    public void removeItem(StorageItem item)
+    {
+        container.removeItem(item);
+    }
+
 
     private void showWarningText()
     {

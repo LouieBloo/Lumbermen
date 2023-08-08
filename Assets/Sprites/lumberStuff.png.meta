@@ -1,0 +1,1890 @@
+fileFormatVersion: 2
+guid: 61555466aaa8dab48b0bfe24f033f75b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lumberStuff_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 721
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d00184875f23643a725cfb6ac29f8d
+      internalID: 1995109367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 624
+        width: 95
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 48, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12114000a828f204dbeaf6fb96a65b55
+      internalID: -1851675417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 719
+        width: 116
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52961483e84f314ab7d62781b5a43eb
+      internalID: 2016425331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 729
+        width: 95
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa66ee35873404418beb33cb2291995
+      internalID: -334921850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 722
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f9f774e19a64a4083af859ee0042be
+      internalID: -1137757382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_5
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 714
+        width: 113
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494a7cf1002b4fe479854d8bd1b6c457
+      internalID: -1740982694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_6
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 645
+        width: 48
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f9d9140cf70da428b092d538b67d13
+      internalID: 1704990873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_7
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 691
+        width: 48
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1aa94cca06d46d46b8b02a18bf6c27f
+      internalID: -1931476224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_8
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 694
+        width: 124
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ac2e9c120b3d8d4db1644782950e641
+      internalID: 1587131029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 672
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45b9db15404088a41afafa7a0ebdc088
+      internalID: 387698701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_10
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 678
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89084a94a8415d149996a4462d289c74
+      internalID: 1203056805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 696
+        width: 96
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a55c7bc91570564fa72152523b04f52
+      internalID: -343037072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_12
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 624
+        width: 56
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f9f527209ce1194aa336e82249ae856
+      internalID: 574033972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_13
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 690
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 584857f86530bea4bb1cda31c778e99e
+      internalID: -1140370772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_14
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 624
+        width: 36
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e8f657f7edbab4b92a25254e9b4341
+      internalID: -817267834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_15
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 629
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1b36095e643d94fb7012fccc9342bd
+      internalID: 1387745945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_16
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 624
+        width: 77
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b1608b1481a8846bbb6a8d600e5fa1
+      internalID: 588208238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_17
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 624
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92ae20b83610124d865050da884a70b
+      internalID: -1078336460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_18
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 627
+        width: 77
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c915147ca15927d4c9c671e222038977
+      internalID: 54459992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_19
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 638
+        width: 37
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f75ad87b54d834f8bebfec04d0c38d
+      internalID: -906605077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_21
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 577
+        width: 66
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96a627949bcc61642a12919d87d08942
+      internalID: -875273410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_22
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 578
+        width: 67
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 778018ed0874ca74c8fdaa5079bbeaa4
+      internalID: 805829040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_23
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 577
+        width: 58
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 785723033784dab449775e30e826d9e9
+      internalID: -680993182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_24
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 618
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f9931bc64af4242a3e41d5e06843b5
+      internalID: -589901632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_25
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 576
+        width: 95
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf79d8427967e84cac703b2bb8b6dcf
+      internalID: 668781177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_26
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 600
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ec049c985bc814eafe4e2be8bd23b2
+      internalID: 739318698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_27
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 528
+        width: 138
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ca0775fb9d6b940844ca6bd85bcddd
+      internalID: 1687948682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_28
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 534
+        width: 33
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799781e2b7e59184abb102ed0a1489c4
+      internalID: 969662466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_29
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 577
+        width: 46
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc916b5de0939d542843cea1e071c7e9
+      internalID: 816852203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_31
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 528
+        width: 42
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba6645dd49f629944ac05e270215f4dc
+      internalID: -1956524225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_32
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 576
+        width: 26
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d397cfc6654f844a95f5f7a26986c1
+      internalID: 295765734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_34
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 530
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12fb3426cabeeba439055e1923446fed
+      internalID: 1421567540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_35
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 536
+        width: 9
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5119c365c04e024681fd93d5ecf4cad
+      internalID: 957947592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_36
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 532
+        width: 8
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e83718de06d16ae45b496816c1c457f6
+      internalID: 1713873779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_37
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 530
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e54b31791f0aca408b74cbf65f6d7f3
+      internalID: 900241603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_38
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 528
+        width: 71
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c226929d760472040a39f81b045999d3
+      internalID: -1539203725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_39
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 553
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d38a44d558790847bf412fbc7d9b9ec
+      internalID: -2070882193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_40
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 528
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2a47e777ee6cd44ebbe35064c3484bc
+      internalID: -1175887965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_41
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 542
+        width: 44
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6427f725834e3af498fab925c5cd76d1
+      internalID: -1702963561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_42
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 528
+        width: 47
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbd447c5b04daa4cac23fafeaa396fa
+      internalID: 1196405357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_43
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 547
+        width: 43
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 621bbf8acfef81248bb350e585371704
+      internalID: 874257778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_44
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 426
+        width: 95
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3918bcefd490674429d08b197d3f4868
+      internalID: 1243476151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_45
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 498
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41562f7bd4ec6f848a36c0de7f1898fd
+      internalID: 700835470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_46
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 482
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeaeee03cf6c03d40a97514d39e397fa
+      internalID: -333753987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_47
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 493
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a3a85af71f040498b41524a6386991
+      internalID: -1870859709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_48
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 522
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbad4f461d140944b83f50a706476223
+      internalID: 231873386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_49
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 480
+        width: 48
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b631a7af5641ab34b9f1be8ed8984d6a
+      internalID: 1522308040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_50
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 482
+        width: 73
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca99523f5df724d46808c993a78a4ac7
+      internalID: -250723635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_51
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 484
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9d763fb1456a841a1ef686fdb0c11a
+      internalID: 1863712761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_52
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 485
+        width: 44
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2592f300964b134694707f898f06542
+      internalID: 1812728040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_53
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 487
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9559f65900e9c8c428ede22fe2b5572e
+      internalID: 370466505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_54
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 498
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27cd760da23abd243a89ab993b85e3dd
+      internalID: -2079435564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_55
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 481
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6892e862e3415348969cea285917604
+      internalID: 414718302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_56
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 482
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68c7f359982bdc46aff765f72468245
+      internalID: 1185415010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_57
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 482
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47bb7871ef49d754882fee8392637ce7
+      internalID: -713764805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_58
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 484
+        width: 96
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b11a89fda972aa498acfbfc683eb68b
+      internalID: 1442853708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_60
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 429
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d6ebc7ffdd70e48af6825036f415d8
+      internalID: 1026255551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_61
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 439
+        width: 136
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7871056b1a67e2e4ab2c1be4968eb589
+      internalID: -1199223039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_62
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 468
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9295158add790644e8cbd437f84c1dbb
+      internalID: 14305377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_63
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 468
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488d9f2854890704f9b5e517e505da6e
+      internalID: 52573924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_64
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 432
+        width: 137
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7f503be3947e241aef9e25a1552627
+      internalID: -961895706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_66
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 361
+        width: 25
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ac3c8106d417a48b8da8fdf36e1d24
+      internalID: 592214031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_67
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 432
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 521d9ac966a7428469dd50351d0b02d8
+      internalID: 487089848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_68
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 413
+        width: 25
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90157383450ee8e4781ef4e0a0a17797
+      internalID: 1391905064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_69
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 382
+        width: 102
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd5be199006b3e4f8c796213c72d44d
+      internalID: 1206504080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_70
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 359
+        width: 81
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860f67872dfe3e24f86d611991850391
+      internalID: 1208300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_72
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 384
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15bb146d00275f848b36e286bf115e1b
+      internalID: 1898806454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_73
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 387
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eafa8c64dc14c54c8cc49655149dd2c
+      internalID: 552515719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_91
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 239
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2dbc5b5394ab424b828b42aab50b1ba
+      internalID: -1282998559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_92
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 158
+        width: 74
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7263fb3c8e8b21649be79f23d72aaf06
+      internalID: -995558005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_93
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 160
+        width: 99
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ebb4982630a0e647ab5f82049d97b41
+      internalID: 516907953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_94
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 195
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24fa2e7cd8e89b34bbaef68abd2e8d03
+      internalID: 1549942347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_96
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 144
+        width: 61
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa876cd985a1994583a24a3491dd0f0
+      internalID: -993164805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_106
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 171
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9763511f4a0bf884881641ff26dd6c54
+      internalID: 1429254051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_107
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 178
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e0523e2b2be2c4a909ad50ed7028ae
+      internalID: -2129914436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_109
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 144
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60616e3ea06e7514cbdcc25fdc0da9eb
+      internalID: 737879525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_110
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 0
+        width: 126
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03562149a6af87d499cece57f28a0a3b
+      internalID: 788572128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lumberStuff_111
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 11
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27d8b418239b443499c8023c66316f65
+      internalID: -1817743637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      lumberStuff_0: 1995109367
+      lumberStuff_1: -1851675417
+      lumberStuff_10: 1203056805
+      lumberStuff_100: 1990873343
+      lumberStuff_101: 103247243
+      lumberStuff_102: 1059021564
+      lumberStuff_103: 1818634778
+      lumberStuff_104: 89121642
+      lumberStuff_105: -737320813
+      lumberStuff_106: 1429254051
+      lumberStuff_107: -2129914436
+      lumberStuff_108: 780080997
+      lumberStuff_109: 737879525
+      lumberStuff_11: -343037072
+      lumberStuff_110: 788572128
+      lumberStuff_111: -1817743637
+      lumberStuff_12: 574033972
+      lumberStuff_13: -1140370772
+      lumberStuff_14: -817267834
+      lumberStuff_15: 1387745945
+      lumberStuff_16: 588208238
+      lumberStuff_17: -1078336460
+      lumberStuff_18: 54459992
+      lumberStuff_19: -906605077
+      lumberStuff_2: 2016425331
+      lumberStuff_20: -1516899570
+      lumberStuff_21: -875273410
+      lumberStuff_22: 805829040
+      lumberStuff_23: -680993182
+      lumberStuff_24: -589901632
+      lumberStuff_25: 668781177
+      lumberStuff_26: 739318698
+      lumberStuff_27: 1687948682
+      lumberStuff_28: 969662466
+      lumberStuff_29: 816852203
+      lumberStuff_3: -334921850
+      lumberStuff_30: -728953861
+      lumberStuff_31: -1956524225
+      lumberStuff_32: 295765734
+      lumberStuff_33: -308008313
+      lumberStuff_34: 1421567540
+      lumberStuff_35: 957947592
+      lumberStuff_36: 1713873779
+      lumberStuff_37: 900241603
+      lumberStuff_38: -1539203725
+      lumberStuff_39: -2070882193
+      lumberStuff_4: -1137757382
+      lumberStuff_40: -1175887965
+      lumberStuff_41: -1702963561
+      lumberStuff_42: 1196405357
+      lumberStuff_43: 874257778
+      lumberStuff_44: 1243476151
+      lumberStuff_45: 700835470
+      lumberStuff_46: -333753987
+      lumberStuff_47: -1870859709
+      lumberStuff_48: 231873386
+      lumberStuff_49: 1522308040
+      lumberStuff_5: -1740982694
+      lumberStuff_50: -250723635
+      lumberStuff_51: 1863712761
+      lumberStuff_52: 1812728040
+      lumberStuff_53: 370466505
+      lumberStuff_54: -2079435564
+      lumberStuff_55: 414718302
+      lumberStuff_56: 1185415010
+      lumberStuff_57: -713764805
+      lumberStuff_58: 1442853708
+      lumberStuff_59: 101101266
+      lumberStuff_6: 1704990873
+      lumberStuff_60: 1026255551
+      lumberStuff_61: -1199223039
+      lumberStuff_62: 14305377
+      lumberStuff_63: 52573924
+      lumberStuff_64: -961895706
+      lumberStuff_65: -1344235464
+      lumberStuff_66: 592214031
+      lumberStuff_67: 487089848
+      lumberStuff_68: 1391905064
+      lumberStuff_69: 1206504080
+      lumberStuff_7: -1931476224
+      lumberStuff_70: 1208300064
+      lumberStuff_71: 368970069
+      lumberStuff_72: 1898806454
+      lumberStuff_73: 552515719
+      lumberStuff_74: -941430254
+      lumberStuff_75: -205788677
+      lumberStuff_76: 1617077816
+      lumberStuff_77: -1027350984
+      lumberStuff_78: -1857114299
+      lumberStuff_79: 88512410
+      lumberStuff_8: 1587131029
+      lumberStuff_80: 1319466205
+      lumberStuff_81: -1275645388
+      lumberStuff_82: 1716626359
+      lumberStuff_83: 1883177146
+      lumberStuff_84: -494943778
+      lumberStuff_85: -1548144113
+      lumberStuff_86: 1707465481
+      lumberStuff_87: -1189145150
+      lumberStuff_88: -866042566
+      lumberStuff_89: 659073555
+      lumberStuff_9: 387698701
+      lumberStuff_90: 927158606
+      lumberStuff_91: -1282998559
+      lumberStuff_92: -995558005
+      lumberStuff_93: 516907953
+      lumberStuff_94: 1549942347
+      lumberStuff_95: -1879760467
+      lumberStuff_96: -993164805
+      lumberStuff_97: -847981895
+      lumberStuff_98: -1670778999
+      lumberStuff_99: 833385246
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
