@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f757e3e5ce9459f46834cc05e6777ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 10
+  baseMaxHealth: 10
+  baseRegenPerSecond: 0
   hurtAudioClipVolume: 1
   hurtAudioClip: {fileID: 8300000, guid: 340b7f9f662b10a488638a8448e03b8a, type: 3}
 --- !u!114 &6613970006900976236
@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20952679a1fd6c418fa70099407ae81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  experienceAmount: 10
   experiencePrefab: {fileID: 1327793957168699990, guid: 293809ec57997e44784cfe0fccae2ffd, type: 3}
   logPrefab: {fileID: 4311646461259355350, guid: 6b6706fc2c70c724299bd3f865dbcdb4, type: 3}
 --- !u!58 &7633132113857171109

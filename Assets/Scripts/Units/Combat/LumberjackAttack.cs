@@ -5,15 +5,21 @@ using UnityEngine.UIElements;
 
 public class LumberjackAttack : MonoBehaviour
 {
-    public float attackRange = 1f;
-    public float attackRadius = 1f;
-    public float attackSpeed = 1f;
-    public float damage = 10f;
+    public float baseAttackRange = 0.5f;
+    public float baseAttackRadius = 0.5f;
+    public float baseAttackSpeed = 1f;
+    public float baseDamage = 10f;
+    public float damagePerAgility = 5f;
+    public float attackSpeedPerAgility = 0.05f;
+
+    private float attackRange;
+    private float attackRadius;
+    private float attackSpeed;
+    private float damage;
+
     public float autoAttackTurnOnRadius = 10f;
 
     private float attackTimer = 99f;
-
-    private List<HealthHaver> attackList = new List<HealthHaver>();
 
     public Animator animator;
     public Rigidbody2D rigidbody;
@@ -36,6 +42,11 @@ public class LumberjackAttack : MonoBehaviour
         treeLayer = LayerMask.GetMask("Trees");
 
         lastMovementDirection = Vector2.zero;
+
+        attackRange = baseAttackRange;
+        attackRadius = baseAttackRadius;
+        attackSpeed = baseAttackSpeed;
+        damage = baseDamage;
     }
 
     // Update is called once per frame
@@ -57,7 +68,12 @@ public class LumberjackAttack : MonoBehaviour
 
     float getDamage()
     {
-        return damage;
+        return damage + (damagePerAgility * Player.Instance.agility);
+    }
+
+    float getAttackSpeed()
+    {
+        return attackSpeed - (attackSpeedPerAgility * Player.Instance.agility);
     }
 
     void attack()
@@ -98,7 +114,7 @@ public class LumberjackAttack : MonoBehaviour
 
     bool canAttack()
     {
-        return attackTimer >= attackSpeed && isAroundTrees();
+        return attackTimer >= getAttackSpeed() && isAroundTrees();
     }
 
     bool isAroundTrees()

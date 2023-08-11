@@ -59,8 +59,6 @@ public class UnitGrid : MonoBehaviour
                 grid[x, y] = new GridCell();
             }
         }
-
-        Debug.Log(grid[0, 0].unitType);
     }
 
     public bool isCellEmpty(Vector2 position)

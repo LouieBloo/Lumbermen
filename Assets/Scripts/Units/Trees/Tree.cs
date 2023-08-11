@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Tree : MonoBehaviour, IDier, IDespawnedPoolObject, IRetrievedPoolObject
 {
+    public int experienceAmount = 10;
     public GameObject experiencePrefab;
     public GameObject logPrefab;
 
@@ -28,6 +29,7 @@ public class Tree : MonoBehaviour, IDier, IDespawnedPoolObject, IRetrievedPoolOb
 
     public void die()
     {
+        Player.Instance.GetComponent<ExperienceHaver>().gainExperience(experienceAmount);
         UnitGrid.Instance.fillCell(transform.position, null, UnitGrid.UnitTypes.Empty);
         //Instantiate(experiencePrefab, transform.position, Quaternion.identity);
         Instantiate(logPrefab, transform.position, Quaternion.identity);

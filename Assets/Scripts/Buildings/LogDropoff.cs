@@ -67,7 +67,6 @@ public class LogDropoff : MonoBehaviour
         storageText.text = container.currentCapacity + "/" + maxStorageCapacity;
 
         float percentage = ((float)container.currentCapacity / (float)maxStorageCapacity) * 100f;
-        Debug.Log(percentage);
         if (percentage > 0 && percentage <= 20)
         {
             logSprites[0].SetActive(true);

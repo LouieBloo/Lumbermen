@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExperienceOrb : Pickup
 {
-    public float experience = 10f;
+    public int experience = 10;
 
     // Start is called before the first frame update
     void Start()
