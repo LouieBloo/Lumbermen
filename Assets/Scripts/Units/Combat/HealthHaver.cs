@@ -1,20 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class HealthHaver : MonoBehaviour
 {
-
-    public float baseMaxHealth;
-    public float baseRegenPerSecond = 0f;
-    public bool usePlayerStats = false;
-    public float maxHealthPerStrength;
-    public float regenPerStrength;
-    private float maxHealth;
-    private float currentHealth;
-    private float regenPerSecond;
-
-
     public float hurtAudioClipVolume = 0.8f;
     public AudioClip hurtAudioClip;
 
@@ -23,14 +13,14 @@ public class HealthHaver : MonoBehaviour
 
     private IEnumerator healthRegenCoroutine;
 
+    private Unit unit;
+
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = baseMaxHealth;
-        currentHealth = maxHealth;
-        regenPerSecond = baseRegenPerSecond;
+        unit = GetComponent<Unit>();
 
-        if(regenPerSecond > 0)
+        if (unit.healthRegen > 0)
         {
             healthRegenCoroutine = regenHealth();
             StartCoroutine(healthRegenCoroutine);
@@ -38,21 +28,22 @@ public class HealthHaver : MonoBehaviour
 
         if(healthBar != null) { 
             healthBarStartingWidth = healthBar.localScale.x;
+            updateHealthBar();
         }
     }
 
     IEnumerator regenHealth()
     {
-        while(currentHealth > 0)
+        while(unit.health > 0)
         {
             if(Time.timeScale > 0)
             {
-                if(currentHealth < getMaxHealth())
+                if(unit.health < unit.maxHealth)
                 {
-                    currentHealth += Time.deltaTime * getRegen();
-                    if (currentHealth > getMaxHealth())
+                    unit.modifyStat(Unit.StatTypes.Health, Time.deltaTime * unit.healthRegen);
+                    if (unit.health > unit.maxHealth)
                     {
-                        currentHealth = getMaxHealth();
+                        unit.modifyStat(Unit.StatTypes.Health, unit.maxHealth);
                     }
                     updateHealthBar();
                 }
@@ -60,16 +51,6 @@ public class HealthHaver : MonoBehaviour
 
             yield return null;
         }
-    }
-
-    float getMaxHealth()
-    {
-        return maxHealth + (usePlayerStats ? (Player.Instance.strength * maxHealthPerStrength) : 0);
-    }
-
-    float getRegen()
-    {
-        return regenPerSecond + (usePlayerStats ? (Player.Instance.strength * regenPerStrength) : 0);
     }
 
     void die()
@@ -92,11 +73,11 @@ public class HealthHaver : MonoBehaviour
 
     public float takeDamage(float damage)
     {
-        currentHealth -= damage;
+        unit.modifyStat(Unit.StatTypes.Health, -damage);
         playDamageSound();
         updateHealthBar();
 
-        if (currentHealth <= 0)
+        if (unit.health <= 0)
         {
             die();
         }
@@ -117,8 +98,16 @@ public class HealthHaver : MonoBehaviour
     {
         if(healthBar != null)
         {
-            float percentage = currentHealth / getMaxHealth();
-            healthBar.localScale = new Vector3(healthBarStartingWidth * percentage,healthBar.localScale.y, healthBar.localScale.z);
+            float percentage = unit.health / unit.maxHealth;
+            
+            if(percentage >= 1f)
+            {
+                healthBar.localScale = new Vector3(0, 0, 0);
+            }
+            else
+            {
+                healthBar.localScale = new Vector3(healthBarStartingWidth * percentage, 1, 1);
+            }
         }
     }
 }

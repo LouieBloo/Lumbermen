@@ -35,9 +35,13 @@ public class LumberjackAttack : MonoBehaviour
 
     private Vector2 lastMovementDirection;
 
+    private Unit unit;
+
     // Start is called before the first frame update
     void Start()
     {
+        unit = GetComponent<Unit>();
+
         playerLayer = LayerMask.NameToLayer("Player");
         treeLayer = LayerMask.GetMask("Trees");
 
@@ -68,12 +72,12 @@ public class LumberjackAttack : MonoBehaviour
 
     float getDamage()
     {
-        return damage + (damagePerAgility * Player.Instance.agility);
+        return damage + (damagePerAgility * unit.agility);
     }
 
     float getAttackSpeed()
     {
-        return attackSpeed - (attackSpeedPerAgility * Player.Instance.agility);
+        return attackSpeed - (attackSpeedPerAgility * unit.agility);
     }
 
     void attack()
@@ -145,6 +149,6 @@ public class LumberjackAttack : MonoBehaviour
         Gizmos.DrawLine(lastCastOrigin, lastCastOrigin + lastCastDirection * lastCastDistance);
         Gizmos.DrawWireSphere(lastCastOrigin + lastCastDirection * lastCastDistance, lastCastRadius);
 
-        Gizmos.DrawWireSphere   (transform.position, autoAttackTurnOnRadius);
+        //Gizmos.DrawWireSphere   (transform.position, autoAttackTurnOnRadius);
     }
 }

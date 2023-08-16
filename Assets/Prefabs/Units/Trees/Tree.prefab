@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7374085990713178694}
+  - component: {fileID: 8904135072384253242}
   - component: {fileID: 5379373011437662334}
   - component: {fileID: 6613970006900976236}
   - component: {fileID: 9128814427767094350}
@@ -36,6 +37,27 @@ Transform:
   - {fileID: 197607322373477933}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8904135072384253242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2623893834948715015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc739ae7b5db8584aa97b2a22475b2b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseStrength: 0
+  baseAgility: 0
+  baseIntelligence: 0
+  baseMovementSpeed: 0
+  baseMaximumHealth: 10
+  baseHealthRegen: 0
+  baseAttackSpeed: 0
+  baseMaxHealthPerStrength: 0
+  baseHealthRegenPerStrength: 0
 --- !u!114 &5379373011437662334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,10 +70,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f757e3e5ce9459f46834cc05e6777ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxHealth: 10
-  baseRegenPerSecond: 0
   hurtAudioClipVolume: 1
   hurtAudioClip: {fileID: 8300000, guid: 340b7f9f662b10a488638a8448e03b8a, type: 3}
+  healthBar: {fileID: 0}
 --- !u!114 &6613970006900976236
 MonoBehaviour:
   m_ObjectHideFlags: 0

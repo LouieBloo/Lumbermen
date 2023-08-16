@@ -5,12 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
-
-    public int strength { get; private set; }
-    public int agility { get; private set; }
-    public int intelligence { get; private set; }
-
-    public enum StatTypes { Strength, Agility, Intelligence}
+    public Unit unit;
 
     private void Awake()
     {
@@ -23,6 +18,8 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        unit = GetComponent<Unit>();
     }
 
     void Update()
@@ -33,21 +30,4 @@ public class Player : MonoBehaviour
         }    
     }
 
-    public void levelUp(StatTypes stat, int amount)
-    {
-        switch(stat)
-        {
-            case StatTypes.Strength:
-                strength += amount;
-                break;
-            case StatTypes.Agility:
-                agility += amount;
-                break;
-            case StatTypes.Intelligence:
-                intelligence += amount;
-                break;
-        }
-
-        Debug.Log(strength + " " + agility + " " + intelligence);
-    }
 }

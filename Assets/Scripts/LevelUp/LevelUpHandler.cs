@@ -41,19 +41,19 @@ public class LevelUpHandler : MonoBehaviour
 
     public void strengthChoosen()
     {
-        Player.Instance.levelUp(Player.StatTypes.Strength, currentLevelUp.strengthGain);
+        Player.Instance.unit.modifyStat(Unit.StatTypes.Strength, currentLevelUp.strengthGain);
         close();
     }
 
     public void agilityChoosen()
     {
-        Player.Instance.levelUp(Player.StatTypes.Agility, currentLevelUp.agilityGain);
+        Player.Instance.unit.modifyStat(Unit.StatTypes.Agility, currentLevelUp.agilityGain);
         close();
     }
 
     public void intelligenceChoosen()
     {
-        Player.Instance.levelUp(Player.StatTypes.Intelligence, currentLevelUp.intelligenceGain);
+        Player.Instance.unit.modifyStat(Unit.StatTypes.Intelligence, currentLevelUp.intelligenceGain);
         close();
     }
 }
