@@ -58,6 +58,7 @@ public class Unit : MonoBehaviour
         stats[StatTypes.AttackSpeed] = new UnitStat(StatTypes.AttackSpeed, baseAttackSpeed);
         stats[StatTypes.MaxHealthPerStrength] = new UnitStat(StatTypes.MaxHealthPerStrength, baseMaxHealthPerStrength);
         stats[StatTypes.HealthRegenPerStrength] = new UnitStat(StatTypes.HealthRegenPerStrength, baseHealthRegenPerStrength);
+        stats[StatTypes.MovementSpeed] = new UnitStat(StatTypes.MovementSpeed, baseMovementSpeed);
     }
 
     public void modifyStat(StatTypes type, float amount)
@@ -86,6 +87,7 @@ public class Unit : MonoBehaviour
 
     public float maxHealthPerStrength { get { return stats[StatTypes.MaxHealthPerStrength].total; } }
     public float healthRegenPerStrength { get { return stats[StatTypes.HealthRegenPerStrength].total; } }
+    public float movementSpeed { get { return stats[StatTypes.MovementSpeed].total; } }
 
     public void recalculateModifiers()
     {

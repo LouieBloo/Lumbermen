@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class BasicUnitMovement : MonoBehaviour
 {
-    public float speed = 5.0f; // You can adjust this speed in the Unity editor.
-
     public Transform bodyDirectionFlipper;
     public Animator animator;
 
     private Rigidbody2D rb;
+    private Unit unit;
 
     public enum Direction { North, South, East, West, NotMoving }
     public Direction currentDirection = Direction.NotMoving;
@@ -19,33 +18,34 @@ public class PlayerMovement : MonoBehaviour
     {
         // Get the Rigidbody2D component to apply forces for movement
         rb = GetComponent<Rigidbody2D>();
-
+        unit = GetComponent<Unit>();
         animator = GetComponent<Animator>();
     }
 
-    private void Update()
+    float getXDirection()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            GridPathfinding.Instance.fillCell(worldPosition);
-        }
+        return Input.GetAxis("Horizontal");
+    }
+
+    float getYDirection()
+    {
+        return Input.GetAxis("Vertical");
     }
 
     // FixedUpdate is called once per frame, but at a fixed interval - better for physics calculations
     void FixedUpdate()
     {
         // Horizontal movement (A/D keys)
-        float moveX = Input.GetAxis("Horizontal");
+        float moveX = getXDirection();
 
         // Vertical movement (W/S keys)
-        float moveY = Input.GetAxis("Vertical");
+        float moveY = getYDirection();
 
         // Create a movement vector
         Vector2 movement = new Vector2(moveX, moveY);
 
         // Apply the velocity to the Rigidbody2D
-        rb.velocity = movement * speed;
+        rb.velocity = movement * unit.movementSpeed;
 
         // Update the direction based on movement
         if (moveY > 0)
@@ -99,11 +99,5 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsWalking", false);
         }
-    }
-
-    
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
     }
 }

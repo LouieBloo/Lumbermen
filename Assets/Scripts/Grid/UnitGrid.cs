@@ -37,6 +37,23 @@ public class UnitGrid : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        grid = new GridCell[width, height];
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                grid[x, y] = new GridCell();
+            }
+        }
+
+        //scan world for defaults
+        GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
+
+        foreach (GameObject tree in trees)
+        {
+            fillCell(tree.transform.position, tree, UnitTypes.Tree);
+        }
     }
 
     private void Update()
@@ -51,14 +68,6 @@ public class UnitGrid : MonoBehaviour
 
     void Start()
     {
-        grid = new GridCell[width, height];
-        for(int x = 0; x < width; x++)
-        {
-            for(int y = 0; y < height; y++)
-            {
-                grid[x, y] = new GridCell();
-            }
-        }
     }
 
     public bool isCellEmpty(Vector2 position)

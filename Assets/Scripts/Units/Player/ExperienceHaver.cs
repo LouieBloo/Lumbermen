@@ -34,7 +34,7 @@ public class ExperienceHaver : MonoBehaviour
 
         if(experienceGainedAudioSource != null )
         {
-            experienceGainedAudioSource.Play();
+            //experienceGainedAudioSource.Play();
         }
 
         checkLevel();

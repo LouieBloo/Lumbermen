@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            GetComponent<HealthHaver>().takeDamage(10);
+            //GetComponent<HealthHaver>().takeDamage(10);
         }    
     }
 
