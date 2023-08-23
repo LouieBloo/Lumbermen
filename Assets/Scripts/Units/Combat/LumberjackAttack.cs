@@ -109,7 +109,7 @@ public class LumberjackAttack : MonoBehaviour
                     HealthHaver healthHaver = hit.collider.gameObject.GetComponent<HealthHaver>();
                     if (healthHaver != null)
                     {
-                        healthHaver.takeDamage(getDamage());
+                        healthHaver.takeDamage(getDamage(),gameObject);
                     }
                 }
             }

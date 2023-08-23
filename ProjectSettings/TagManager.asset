@@ -59,3 +59,6 @@ TagManager:
   - name: Pickups
     uniqueID: 1475964063
     locked: 0
+  - name: Sky
+    uniqueID: 1104593905
+    locked: 0

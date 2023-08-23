@@ -39,7 +39,7 @@ public class Sprout : MonoBehaviour, IDespawnedPoolObject, IRetrievedPoolObject,
         if(currentSpriteIndex >= sprites.Length)
         {
             //Instantiate(treeToSpawn,transform.position,Quaternion.identity);
-            die();
+            die(null);
             //Destroy(this.gameObject);
         }
         else
@@ -66,7 +66,7 @@ public class Sprout : MonoBehaviour, IDespawnedPoolObject, IRetrievedPoolObject,
         sprites[currentSpriteIndex].gameObject.SetActive(true);
     }
 
-    public void die()
+    public void die(GameObject source)
     {
         GameObject tree = ObjectPoolManager.SpawnGameObject(treeToSpawn, transform.position, Quaternion.identity);
         tree.GetComponent<Tree>().setup();

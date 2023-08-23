@@ -1,0 +1,690 @@
+fileFormatVersion: 2
+guid: c728cd93db3267040acdf1dae729c8ea
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_0
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 670
+        width: 140
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f402bf466c51e8647a7a937dc0b8e9d3
+      internalID: -1220838046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_1
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 694
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e5e69aeb8e0d148b629e1882812eed
+      internalID: 1669172836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_2
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 658
+        width: 189
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2566cec61ece4cb499acffb1ef59b95e
+      internalID: -101778528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_3
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 657.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbfae97344049244481e4573ef7fb1b4
+      internalID: 1656741351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_4
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 657.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a236aa274b4bdeb49954e4ab957b6fca
+      internalID: 1597698178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 493.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ab771b13ec20d40997e4c3c8068502
+      internalID: 573887891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_6
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 493.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c255cbdf4689d43975568904ce94bd
+      internalID: 2094045212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_7
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 493.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cc7b263dd5879478d19cc29680a1a8
+      internalID: -86698016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_8
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 493.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e2a1780375050f4993e4a1547b9b90f
+      internalID: -1536277789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_9
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 493.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8c0c904ab919714da148ae637a274dc
+      internalID: -1632385266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 311
+        width: 174
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e040e61a5fcdbea4f96b73768d7cd53e
+      internalID: 1578956736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_11
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 329.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beca32d6b378f6546b18f1cf09f2a507
+      internalID: 2106238170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_12
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 329.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 153cca0a1cc24f8438d854f707924f4e
+      internalID: -747311469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_13
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 329.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55714166181f68b4491f597a3a6dcfd3
+      internalID: -1896569833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_14
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 329.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e61ccddd10bc9546b85b005bca3ece9
+      internalID: 1126316264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 165.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4fbaeab0ed85d3479c83026bdbdfee6
+      internalID: -179757407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_16
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 165.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a884608342e24488fad23a2d6c7bc6
+      internalID: -1607123003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_17
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 165.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d0832143f3cb6458ed88373b14daec
+      internalID: -1436261485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_18
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 165.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943e5c1581ece324ba4b881cca4fbd1b
+      internalID: -953346474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_19
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 165.6
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1756d588ca009884ab559fc59649a092
+      internalID: -1900800814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.6000061
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75be98fd6f8afdd4aa98fc5604a36aec
+      internalID: -1615509769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_21
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1.6000061
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4861119ea619e1344b333fdb05d46b9e
+      internalID: 130614810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_22
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 1.6000061
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90dd72b2225f03c48909c7c3fb5e6e36
+      internalID: 1353595240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_23
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 1.6000061
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb925a81d830aaf4bb6c33e1518ab383
+      internalID: -1678325333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngkit_wind-effect-png_8436200_24
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 1.6000061
+        width: 212.4
+        height: 164.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abde47ec8acd8f0419aed8cee32bf304
+      internalID: -376647143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      pngkit_wind-effect-png_8436200_0: -1220838046
+      pngkit_wind-effect-png_8436200_1: 1669172836
+      pngkit_wind-effect-png_8436200_10: 1578956736
+      pngkit_wind-effect-png_8436200_11: 2106238170
+      pngkit_wind-effect-png_8436200_12: -747311469
+      pngkit_wind-effect-png_8436200_13: -1896569833
+      pngkit_wind-effect-png_8436200_14: 1126316264
+      pngkit_wind-effect-png_8436200_15: -179757407
+      pngkit_wind-effect-png_8436200_16: -1607123003
+      pngkit_wind-effect-png_8436200_17: -1436261485
+      pngkit_wind-effect-png_8436200_18: -953346474
+      pngkit_wind-effect-png_8436200_19: -1900800814
+      pngkit_wind-effect-png_8436200_2: -101778528
+      pngkit_wind-effect-png_8436200_20: -1615509769
+      pngkit_wind-effect-png_8436200_21: 130614810
+      pngkit_wind-effect-png_8436200_22: 1353595240
+      pngkit_wind-effect-png_8436200_23: -1678325333
+      pngkit_wind-effect-png_8436200_24: -376647143
+      pngkit_wind-effect-png_8436200_3: 1656741351
+      pngkit_wind-effect-png_8436200_4: 1597698178
+      pngkit_wind-effect-png_8436200_5: 573887891
+      pngkit_wind-effect-png_8436200_6: 2094045212
+      pngkit_wind-effect-png_8436200_7: -86698016
+      pngkit_wind-effect-png_8436200_8: -1536277789
+      pngkit_wind-effect-png_8436200_9: -1632385266
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IDier 
 {
-    public void die();
+    public void die(GameObject source);
 }

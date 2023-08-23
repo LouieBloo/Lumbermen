@@ -53,7 +53,7 @@ public class HealthHaver : MonoBehaviour
         }
     }
 
-    void die()
+    void die(GameObject source)
     {
         if(healthRegenCoroutine != null)
         {
@@ -62,7 +62,7 @@ public class HealthHaver : MonoBehaviour
 
         IDier dier = this.gameObject.GetComponent<IDier>();
         if (dier != null) {
-            dier.die();
+            dier.die(source);
         }
         else
         {
@@ -71,7 +71,7 @@ public class HealthHaver : MonoBehaviour
         
     }
 
-    public float takeDamage(float damage)
+    public float takeDamage(float damage, GameObject source)
     {
         unit.modifyStat(Unit.StatTypes.Health, -damage);
         playDamageSound();
@@ -79,7 +79,7 @@ public class HealthHaver : MonoBehaviour
 
         if (unit.health <= 0)
         {
-            die();
+            die(source);
         }
         
 

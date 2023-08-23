@@ -27,9 +27,17 @@ public class Tree : MonoBehaviour, IDier, IDespawnedPoolObject, IRetrievedPoolOb
         UnitGrid.Instance.fillCell(transform.position, this.gameObject, UnitGrid.UnitTypes.Tree);
     }
 
-    public void die()
+    public void die(GameObject source)
     {
-        Player.Instance.GetComponent<ExperienceHaver>().gainExperience(experienceAmount);
+        if(source != null)
+        {
+            ExperienceHaver experienceHaver = source.GetComponent<ExperienceHaver>();
+            if(experienceHaver != null)
+            {
+                experienceHaver.gainExperience(experienceAmount);
+            }
+        }
+        
         UnitGrid.Instance.fillCell(transform.position, null, UnitGrid.UnitTypes.Empty);
         //Instantiate(experiencePrefab, transform.position, Quaternion.identity);
         Instantiate(logPrefab, transform.position, Quaternion.identity);

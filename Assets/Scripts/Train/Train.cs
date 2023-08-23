@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
@@ -11,24 +13,39 @@ public class Train : MonoBehaviour
 
     private float currentSpeed = 0f;
     private float accelerationRate;
-    private Vector3 targetPoint;
+    
     public bool isMoving = false;
     private float velocityReference;
 
+    private Vector3 startPoint;
     private Vector3 trainStopPoint;
     private Vector3 trainEndPoint;
+    private Vector3 targetPoint;
+    private List<Vector3> allPoints = new List<Vector3>();
+
+    private int currentTarget;
 
     private bool waitingAtStop = false;
     public float waitAtStopTime = 4f;
+    public float waitAtStartTime = 2f;
     private float waitingAtStopTimer = 0f;
+    private float waitingAtStopCurrentWaitTime;
 
     void Start()
     {
-        transform.position = GameObject.FindGameObjectWithTag("TrainStart").transform.position;
+        startPoint = GameObject.FindGameObjectWithTag("TrainStart").transform.position;
         trainStopPoint = GameObject.FindGameObjectWithTag("TrainStop").transform.position;
         trainEndPoint = GameObject.FindGameObjectWithTag("TrainEnd").transform.position;
 
-        SetTarget(trainStopPoint);
+        allPoints.AddRange(new Vector3[] { startPoint, trainStopPoint, trainEndPoint });
+
+        currentTarget = 0;
+
+        transform.position = startPoint;
+        waitingAtStopCurrentWaitTime = waitAtStartTime;
+        waitingAtStop = true;
+
+        //SetTarget(trainStopPoint);
     }
 
     public void SetTarget(Vector3 newTarget)
@@ -79,20 +96,31 @@ public class Train : MonoBehaviour
                 transform.position = new Vector3(targetPoint.x, transform.position.y, transform.position.z);
                 currentSpeed = 0;
                 isMoving = false;
+                waitingAtStop = true;
 
-                if(targetPoint == trainEndPoint) { Destroy(this.gameObject); }
+                if (currentTarget == allPoints.Count-1) {
 
-                if(targetPoint == trainStopPoint) {
-                    waitingAtStop = true;
+                    waitingAtStopCurrentWaitTime = waitAtStartTime;
+                    currentTarget = 0;
+                    transform.position = allPoints[0];
+                }
+
+                if(currentTarget == 1) {
+                    waitingAtStopCurrentWaitTime = waitAtStopTime;
                 }
             }
         }else if(waitingAtStop)
         {
             waitingAtStopTimer += Time.deltaTime;
-            if(waitingAtStopTimer >= waitAtStopTime)
+            if(waitingAtStopTimer >= waitingAtStopCurrentWaitTime)
             {
                 waitingAtStop = false;
-                SetTarget(trainEndPoint);
+                waitingAtStopTimer = 0;
+
+                currentTarget++;
+                if(currentTarget >= allPoints.Count) { currentTarget = 0; }
+
+                SetTarget(allPoints[currentTarget]);
             }
         }
     }

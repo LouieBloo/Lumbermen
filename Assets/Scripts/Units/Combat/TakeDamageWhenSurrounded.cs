@@ -34,7 +34,7 @@ public class TakeDamageWhenSurrounded : MonoBehaviour
                 // If the CircleCast hit something
                 if (hits != null && hits.Length >= numberOfTreesToTakeDamage)
                 {
-                    GetComponent<HealthHaver>().takeDamage(damage);
+                    GetComponent<HealthHaver>().takeDamage(damage,null);
                     damageTickRateTimer = 0f;
                 }
             }
