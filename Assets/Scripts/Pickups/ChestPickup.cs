@@ -41,7 +41,7 @@ public class ChestPickup : Pickup
     {
         if (gold > 0)
         {
-            GameStats.Instance.modifyPlayerGold(gold);
+            Player.Instance.modifyStat(Unit.StatTypes.Gold,gold);
         }
         Destroy(this.gameObject);
     }

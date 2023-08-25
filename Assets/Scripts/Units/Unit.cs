@@ -45,7 +45,14 @@ public class Unit : MonoBehaviour
         }
     }
 
-    public enum StatTypes { Strength, Agility, Intelligence, MovementSpeed, Health, HealthRegen, MaxHealth, AttackSpeed, MaxHealthPerStrength, HealthRegenPerStrength }
+    public enum StatTypes { 
+        Strength, Agility, Intelligence, 
+        MovementSpeed, 
+        Health, HealthRegen, MaxHealth, 
+        AttackSpeed, 
+        MaxHealthPerStrength, HealthRegenPerStrength,
+        Gold
+    }
 
     private void Awake()
     {

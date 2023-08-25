@@ -9,7 +9,6 @@ public class GameStats : MonoBehaviour
     public TMP_Text goldText;
     public TMP_Text gameTimeText;
 
-    private float playerGold;
     private float gameTime;
     private float gameTimeUpdaterDelay;
 
@@ -18,7 +17,7 @@ public class GameStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player.Instance.subscribeToStat(Unit.StatTypes.Gold, modifyPlayerGold);
     }
     private void Awake()
     {
@@ -48,9 +47,8 @@ public class GameStats : MonoBehaviour
         }
     }
 
-    public void modifyPlayerGold(float gold)
+    private void modifyPlayerGold(float gold)
     {
-        playerGold += gold;
         goldText.text = gold + "";
     }
 

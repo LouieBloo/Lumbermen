@@ -35,6 +35,13 @@ public class LogDropoff : MonoBehaviour
         return container.grabItemsByName(itemName);
     }
 
+
+    public StorageItem removeItem(StorageItem item)
+    {
+        updateText();
+        return container.removeItem(item);
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision != null)
@@ -61,7 +68,6 @@ public class LogDropoff : MonoBehaviour
             }
          }
     }
-
     void updateText()
     {
         storageText.text = container.currentCapacity + "/" + maxStorageCapacity;

@@ -107,6 +107,7 @@ public class Train : MonoBehaviour
 
                 if(currentTarget == 1) {
                     waitingAtStopCurrentWaitTime = waitAtStopTime;
+                    stoppedAtStation();
                 }
             }
         }else if(waitingAtStop)
@@ -116,6 +117,10 @@ public class Train : MonoBehaviour
             {
                 waitingAtStop = false;
                 waitingAtStopTimer = 0;
+                if (currentTarget == 1)
+                {
+                    leftStation();
+                }
 
                 currentTarget++;
                 if(currentTarget >= allPoints.Count) { currentTarget = 0; }
@@ -123,5 +128,15 @@ public class Train : MonoBehaviour
                 SetTarget(allPoints[currentTarget]);
             }
         }
+    }
+
+    void stoppedAtStation()
+    {
+        GameObject.FindGameObjectWithTag("TrainStop").GetComponent<TrainStop>().trainArrived();
+    }
+
+    void leftStation()
+    {
+        GameObject.FindGameObjectWithTag("TrainStop").GetComponent<TrainStop>().trainLeftStation();
     }
 }

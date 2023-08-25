@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DamageNumbersPro;
+using UnityEditor.UIElements;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class StorageContainer 
 {
@@ -36,14 +38,14 @@ public class StorageContainer
             currentCapacity += item.capacitySpace;
             return true;
         }
-
         return false;
     }
 
-    public void removeItem(StorageItem item)
+    public StorageItem removeItem(StorageItem item)
     {
         items.Remove(item);
         currentCapacity -= item.capacitySpace;
+        return item;
     }
 
     public List<StorageItem> grabItemsByName(string itemName)
