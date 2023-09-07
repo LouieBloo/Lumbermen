@@ -128,7 +128,7 @@ MonoBehaviour:
     characterSpacing: 0
     size: 0
   enableTopText: 1
-  topText: Backpack Full
+  topText: Backpack Full! Drop logs off!
   topTextSettings:
     bold: 0
     italic: 0

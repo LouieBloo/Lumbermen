@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyDirectionFlipper: {fileID: 7169006861461544283}
-  animator: {fileID: 0}
+  animator: {fileID: 2111631947048742442}
   currentDirection: 4
 --- !u!114 &1551026905561167371
 MonoBehaviour:
@@ -686,11 +686,11 @@ MonoBehaviour:
     strengthGain: 1
     agilityGain: 1
     intelligenceGain: 1
-  - experienceNeeded: 50
+  - experienceNeeded: 200
     strengthGain: 1
     agilityGain: 1
     intelligenceGain: 1
-  - experienceNeeded: 200
+  - experienceNeeded: 400
     strengthGain: 1
     agilityGain: 1
     intelligenceGain: 1

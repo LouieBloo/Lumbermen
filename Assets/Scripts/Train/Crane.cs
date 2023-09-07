@@ -5,8 +5,10 @@ using UnityEngine;
 public class Crane : MonoBehaviour
 {
     public float rotationSpeed = 5f;  // Degrees per second
+    private float currentRotation = 0f;
     public Transform linkedTrain;
     public LogDropoff linkedLogDropoff;
+    public GameObject logInHand;
 
     private StorageContainer hand = new StorageContainer();
 
@@ -62,7 +64,7 @@ public class Crane : MonoBehaviour
                 if (hand.canAddItem(logs[0]))
                 {
                     hand.addItem(linkedLogDropoff.removeItem(logs[0]));
-                    //do something about sprites
+                    logInHand.SetActive(true);
                     moveToTarget(linkedTrain);
                 }
             }
@@ -73,6 +75,7 @@ public class Crane : MonoBehaviour
     {
         targetObject = target;
         rotating = true;
+        currentRotation = 0;
     }
 
     void doneRotating()
@@ -82,7 +85,7 @@ public class Crane : MonoBehaviour
             Debug.Log("Done rotating to train");
             StorageContainer.StorageItem itemInHand = hand.removeItem(hand.grabItemsByName("Log")[0]);
             //market?
-            // do something with sprite
+            logInHand.SetActive(false);
             Player.Instance.modifyStat(Unit.StatTypes.Gold, 10);
             moveToTarget(linkedLogDropoff.transform);
         }
@@ -108,8 +111,10 @@ public class Crane : MonoBehaviour
         // Calculate the target rotation around the Z axis based on the calculated angle
         Quaternion targetRotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + angle);
 
+        currentRotation += rotationSpeed * Time.deltaTime;
+
         // Smoothly rotate towards the target rotation
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, currentRotation);
 
         // Check if rotation is almost complete
         if (Quaternion.Angle(transform.rotation, targetRotation) < 0.1f)

@@ -1,53 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using demo2;
 using UnityEngine;
 
-public class PathfindingMovement : MonoBehaviour
+public class EnemyMovement : BasicUnitMovement
 {
-    public GridPathfinding grid;
-    public float speed = 0.5f;
-
-    IEnumerator movingRoutine;
-
-    // Start is called before the first frame update
-    void Start()
+    //public async Task findPath()
+    //{
+    //    (int,int)[] foundPath = await GridPathfinding.Instance.findPath(transform.position, player.position);
+    //    Debug.Log(foundPath.Length);
+    //}
+    public override void Start()
     {
-        
+        base.Start();
+
+        StartCoroutine(MoveTowardsTarget());
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override float getXDirection()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            
-
-            if(movingRoutine != null)
-            {
-                StopCoroutine(movingRoutine);
-            }
-            movingRoutine = MoveTowardsTarget(worldPosition);
-            StartCoroutine(movingRoutine);
-        }
+        if (!target) { return 0; }
+        Vector2 direction = (target.position - transform.position).normalized;
+        return direction.x;
     }
 
-    IEnumerator MoveTowardsTarget(Vector2 target)
+    protected override float getYDirection()
+    {
+        if (!target) { return 0; }
+        Vector2 direction = (target.position - transform.position).normalized;
+        return direction.y;
+    }
+
+    IEnumerator MoveTowardsTarget()
     {
         yield return null;
-       /* Vector2 startingPosition = grid.worldPointToGridPoint(transform.position);
-        Vector2 endPosition = grid.worldPointToGridPoint(target);
+        yield return null;
+        yield return null;
 
-        Debug.Log("start: " + startingPosition);
-        Debug.Log("end: " + endPosition);
+        Vector2 me = transform.position;
+        Vector2 target = player.position;
+        var t = Task.Run(async () => await GridPathfinding.Instance.findPath(me, target));
 
-        (int, int)[] path = grid.findPath(startingPosition, endPosition);
+        yield return new WaitUntil(() => t.IsCompleted);
+        (int, int)[] path = t.Result;
 
         Debug.Log(path.Length);
 
-        if(path != null && path.Length > 0) {
+        /*if (path != null && path.Length > 0)
+        {
             int currentPathIndex = 0;
-            while(currentPathIndex < path.Length)
+            while (currentPathIndex < path.Length)
             {
                 Vector2 targetPos = new Vector2(path[currentPathIndex].Item1, path[currentPathIndex].Item2);
                 // Continue the loop until the object is very close to the target position
@@ -72,10 +75,11 @@ public class PathfindingMovement : MonoBehaviour
                 currentPathIndex++;
             }
 
-            
-            
+
+
         }
 
         movingRoutine = null;*/
     }
+
 }

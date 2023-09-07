@@ -7,27 +7,30 @@ public class BasicUnitMovement : MonoBehaviour
     public Transform bodyDirectionFlipper;
     public Animator animator;
 
+
     private Rigidbody2D rb;
     private Unit unit;
+    protected Transform player;
+    protected Transform target;
 
     public enum Direction { North, South, East, West, NotMoving }
     public Direction currentDirection = Direction.NotMoving;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         // Get the Rigidbody2D component to apply forces for movement
         rb = GetComponent<Rigidbody2D>();
         unit = GetComponent<Unit>();
-        animator = GetComponent<Animator>();
+        player = Player.Instance.transform;
     }
 
-    float getXDirection()
+    protected virtual float getXDirection()
     {
         return Input.GetAxis("Horizontal");
     }
 
-    float getYDirection()
+    protected virtual float getYDirection()
     {
         return Input.GetAxis("Vertical");
     }
@@ -48,21 +51,21 @@ public class BasicUnitMovement : MonoBehaviour
         rb.velocity = movement * unit.movementSpeed;
 
         // Update the direction based on movement
-        if (moveY > 0)
-        {
-            currentDirection = Direction.North;
-        }
-        else if (moveY < 0)
-        {
-            currentDirection = Direction.South;
-        }
-        else if (moveX > 0)
+        if (moveX > 0)
         {
             currentDirection = Direction.East;
         }
         else if (moveX < 0)
         {
             currentDirection = Direction.West;
+        }
+        else if (moveY > 0)
+        {
+            currentDirection = Direction.North;
+        }
+        else if (moveY < 0)
+        {
+            currentDirection = Direction.South;
         }
         else
         {

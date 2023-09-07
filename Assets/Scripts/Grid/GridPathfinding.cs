@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using AStar;
 using UnityEngine;
 
@@ -41,40 +42,40 @@ public class GridPathfinding : MonoBehaviour
         //grid[40, 37] = -1;
     }
 
-    public (int, int) FindNearestNonZeroCell( Vector2 position)
-    {
-        Vector2 gridPos = worldPointToGridPoint(position);
-        int maxDistance = Mathf.Max(grid.GetLength(0), grid.GetLength(1));
+    //public (int, int) FindNearestNonZeroCell( Vector2 position)
+    //{
+    //    Vector2 gridPos = worldPointToGridPoint(position);
+    //    int maxDistance = Mathf.Max(grid.GetLength(0), grid.GetLength(1));
         
-        for (int currentDistance = 1; currentDistance <= maxDistance; currentDistance++)
-        {
-            List<(int, int)> validCells = new List<(int, int)>();
-            for (int x = 0; x < grid.GetLength(1); x++)
-            {
-                for (int y = 0; y < grid.GetLength(0); y++)
-                {
-                    float distance = Mathf.Sqrt(Mathf.Pow(x - gridPos.x, 2) + Mathf.Pow(y - gridPos.y, 2));
+    //    for (int currentDistance = 1; currentDistance <= maxDistance; currentDistance++)
+    //    {
+    //        List<(int, int)> validCells = new List<(int, int)>();
+    //        for (int x = 0; x < grid.GetLength(1); x++)
+    //        {
+    //            for (int y = 0; y < grid.GetLength(0); y++)
+    //            {
+    //                float distance = Mathf.Sqrt(Mathf.Pow(x - gridPos.x, 2) + Mathf.Pow(y - gridPos.y, 2));
 
-                    if (distance <= currentDistance && grid[y,x] != -1)
-                    {
-                        validCells.Add((x, y));
-                    }
-                }
-            }
+    //                if (distance <= currentDistance && grid[y,x] != -1)
+    //                {
+    //                    validCells.Add((x, y));
+    //                }
+    //            }
+    //        }
 
-            if (validCells.Count > 0)
-            {
-                // Choose a random cell from the list and return it
-                (int,int) chosenCell = validCells[rand.Next(validCells.Count)];
-                chosenCell.Item1 -= xOffset;
-                chosenCell.Item2 -= yOffset;
-                return chosenCell;
-            }
-        }
+    //        if (validCells.Count > 0)
+    //        {
+    //            // Choose a random cell from the list and return it
+    //            (int,int) chosenCell = validCells[rand.Next(validCells.Count)];
+    //            chosenCell.Item1 -= xOffset;
+    //            chosenCell.Item2 -= yOffset;
+    //            return chosenCell;
+    //        }
+    //    }
 
-        // If there are no non-zero cells, return an invalid index
-        return (-99999, -99999);
-    }
+    //    // If there are no non-zero cells, return an invalid index
+    //    return (-99999, -99999);
+    //}
 
     public bool isCellOpen(Vector2 position)
     {
@@ -107,9 +108,11 @@ public class GridPathfinding : MonoBehaviour
         grid[(int)gridPoint.y, (int)gridPoint.x] = 0;
     }
 
-    public (int,int)[] findPath(Vector2 startingPosition, Vector2 goalPosition)
+    public async Task<(int, int)[]> findPath(Vector2 startingPosition, Vector2 goalPosition)
     {
-        (int, int)[] path = AStarPathfinding.GeneratePathSync((int)startingPosition.x, (int)startingPosition.y, (int)goalPosition.x, (int)goalPosition.y, grid);
+        startingPosition = worldPointToGridPoint(startingPosition);
+        goalPosition = worldPointToGridPoint(goalPosition);
+        (int, int)[] path = await AStarPathfinding.GeneratePath((int)startingPosition.x, (int)startingPosition.y, (int)goalPosition.x, (int)goalPosition.y, grid);
         if(path != null && path.Length > 0) {
             for (int i = 0; i < path.Length; i++)
             {

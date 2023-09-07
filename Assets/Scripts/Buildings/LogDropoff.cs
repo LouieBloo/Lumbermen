@@ -38,8 +38,9 @@ public class LogDropoff : MonoBehaviour
 
     public StorageItem removeItem(StorageItem item)
     {
+        StorageItem removedItem = container.removeItem(item);
         updateText();
-        return container.removeItem(item);
+        return removedItem;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
