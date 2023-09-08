@@ -9,9 +9,9 @@ public class BasicUnitMovement : MonoBehaviour
 
 
     private Rigidbody2D rb;
-    private Unit unit;
+    public Unit unit;
     protected Transform player;
-    protected Transform target;
+    
 
     public enum Direction { North, South, East, West, NotMoving }
     public Direction currentDirection = Direction.NotMoving;
@@ -33,6 +33,11 @@ public class BasicUnitMovement : MonoBehaviour
     protected virtual float getYDirection()
     {
         return Input.GetAxis("Vertical");
+    }
+
+    protected virtual void processNextTarget()
+    {
+
     }
 
     // FixedUpdate is called once per frame, but at a fixed interval - better for physics calculations

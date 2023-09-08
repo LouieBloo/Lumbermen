@@ -82,7 +82,6 @@ public class Crane : MonoBehaviour
     {
         if(targetObject == linkedTrain)
         {
-            Debug.Log("Done rotating to train");
             StorageContainer.StorageItem itemInHand = hand.removeItem(hand.grabItemsByName("Log")[0]);
             //market?
             logInHand.SetActive(false);
@@ -91,7 +90,6 @@ public class Crane : MonoBehaviour
         }
         else if(targetObject == linkedLogDropoff.transform)
         {
-            Debug.Log("Done rotating to loggggg");
         }
     }
 

@@ -13,20 +13,31 @@ public class HealthHaver : MonoBehaviour
 
     private IEnumerator healthRegenCoroutine;
 
-    private Unit unit;
+    public Unit unit;
 
     // Start is called before the first frame update
     void Start()
     {
-        unit = GetComponent<Unit>();
+        if(unit == null)
+        {
+            unit = GetComponent<Unit>();
+        }
 
+        setup(unit);
+    }
+
+    public void setup(Unit unit)
+    {
+        this.unit = unit;
+        if(unit == null) { return; }
         if (unit.healthRegen > 0)
         {
             healthRegenCoroutine = regenHealth();
             StartCoroutine(healthRegenCoroutine);
         }
 
-        if(healthBar != null) { 
+        if (healthBar != null)
+        {
             healthBarStartingWidth = healthBar.localScale.x;
             updateHealthBar();
         }

@@ -46,7 +46,10 @@ public class UnitGrid : MonoBehaviour
                 grid[x, y] = new GridCell();
             }
         }
+    }
 
+    private void Start()
+    {
         //scan world for defaults
         GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
 
@@ -64,10 +67,6 @@ public class UnitGrid : MonoBehaviour
             Vector2 gridPoint = worldPointToGridPoint(worldPosition);
             Debug.Log(grid[(int)gridPoint.x, (int)gridPoint.y].unitType);
         }
-    }
-
-    void Start()
-    {
     }
 
     public bool isCellEmpty(Vector2 position)
@@ -95,6 +94,15 @@ public class UnitGrid : MonoBehaviour
 
         grid[(int)gridPoint.x, (int)gridPoint.y].unitType = unitType;
         grid[(int)gridPoint.x, (int)gridPoint.y].gameObject = gameObject;
+
+        if(unitType == UnitTypes.Empty)
+        {
+            GridPathfinding.Instance.emptyCell(position);
+        }
+        else
+        {
+            GridPathfinding.Instance.fillCell(position);
+        }
     }
 
     public Vector2 worldPointToGridPoint(Vector2 worldPoint)

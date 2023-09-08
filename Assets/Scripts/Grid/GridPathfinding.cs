@@ -33,12 +33,13 @@ public class GridPathfinding : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        grid = new float[width, height];
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        grid = new float[width,height];
         //grid[40, 37] = -1;
     }
 

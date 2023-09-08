@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using demo2;
 using UnityEngine;
@@ -11,6 +12,11 @@ public class EnemyMovement : BasicUnitMovement
     //    (int,int)[] foundPath = await GridPathfinding.Instance.findPath(transform.position, player.position);
     //    Debug.Log(foundPath.Length);
     //}
+    public float distanceToConsiderAtPoint = 0.1f;
+    private (int, int)[] currentPath;
+    private int currentPathIndex = -1;
+    private Vector3 currentPathPosition;
+
     public override void Start()
     {
         base.Start();
@@ -18,18 +24,45 @@ public class EnemyMovement : BasicUnitMovement
         StartCoroutine(MoveTowardsTarget());
     }
 
+    private void Update()
+    {
+        if(currentPath == null) { return; }
+
+        //check if we are close enough to the current target path point
+        if(Vector2.Distance(transform.position, currentPathPosition) <= distanceToConsiderAtPoint){
+            processNextTarget();
+        }
+    }
+
+
     protected override float getXDirection()
     {
-        if (!target) { return 0; }
-        Vector2 direction = (target.position - transform.position).normalized;
+        if (currentPath == null) { return 0; }
+        Vector2 direction = (currentPathPosition - transform.position).normalized;
         return direction.x;
     }
 
     protected override float getYDirection()
     {
-        if (!target) { return 0; }
-        Vector2 direction = (target.position - transform.position).normalized;
+        if (currentPath == null) { return 0; }
+        Vector2 direction = (currentPathPosition - transform.position).normalized;
         return direction.y;
+    }
+
+    protected override void processNextTarget()
+    {
+        currentPathIndex++;
+        if(currentPath != null && currentPathIndex < currentPath.Length)
+        {
+            
+            currentPathPosition = new Vector3(currentPath[currentPathIndex].Item1, currentPath[currentPathIndex].Item2, 0);
+        }
+        else
+        {
+            //we are at the end
+            currentPathIndex = 0;
+            currentPath = null;
+        }
     }
 
     IEnumerator MoveTowardsTarget()
@@ -38,14 +71,38 @@ public class EnemyMovement : BasicUnitMovement
         yield return null;
         yield return null;
 
-        Vector2 me = transform.position;
-        Vector2 target = player.position;
-        var t = Task.Run(async () => await GridPathfinding.Instance.findPath(me, target));
+        float timer = 0;
+        float findPathDelay = 1.5f;
+        bool waitingForPath = false;
+        
+        while (true)
+        {
+            if(!waitingForPath && Time.timeScale > 0)
+            {
+                timer += Time.deltaTime;
+                if(timer >= findPathDelay)
+                {
+                    timer = 0;
+                    Vector2 me = transform.position;
+                    Vector2 target = player.position;
+                    waitingForPath = true;
+                    var t = Task.Run(async () => await GridPathfinding.Instance.findPath(me, target));
+                    yield return new WaitUntil(() => t.IsCompleted);
+                    waitingForPath = false;
+                    currentPath = t.Result;
+                    currentPathIndex = -1;//ghetto but works
 
-        yield return new WaitUntil(() => t.IsCompleted);
-        (int, int)[] path = t.Result;
+                    /*foreach(var item in currentPath)
+                    {
+                        Debug.Log(item.Item1 + " " + item.Item2);
+                    }*/
 
-        Debug.Log(path.Length);
+                    processNextTarget();
+                }
+            }
+
+            yield return null;
+        }
 
         /*if (path != null && path.Length > 0)
         {
