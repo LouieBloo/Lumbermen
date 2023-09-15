@@ -7,6 +7,7 @@ public class HealthHaver : MonoBehaviour
 {
     public float hurtAudioClipVolume = 0.8f;
     public AudioClip hurtAudioClip;
+    public GameObject damageParticlePrefab;
 
     public RectTransform healthBar;
     private float healthBarStartingWidth;
@@ -14,6 +15,7 @@ public class HealthHaver : MonoBehaviour
     private IEnumerator healthRegenCoroutine;
 
     public Unit unit;
+    public IDier dier;
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +73,11 @@ public class HealthHaver : MonoBehaviour
             StopCoroutine(healthRegenCoroutine);
         }
 
-        IDier dier = this.gameObject.GetComponent<IDier>();
+        if(dier == null)
+        {
+            dier = this.gameObject.GetComponent<IDier>();
+        }
+        
         if (dier != null) {
             dier.die(source);
         }
@@ -87,6 +93,7 @@ public class HealthHaver : MonoBehaviour
         unit.modifyStat(Unit.StatTypes.Health, -damage);
         playDamageSound();
         updateHealthBar();
+        emitDamageParticle();
 
         if (unit.health <= 0)
         {
@@ -95,6 +102,14 @@ public class HealthHaver : MonoBehaviour
         
 
         return damage;
+    }
+
+    void emitDamageParticle()
+    {
+        if(damageParticlePrefab != null)
+        {
+            Instantiate(damageParticlePrefab,this.transform.position,Quaternion.identity);
+        }
     }
 
     void playDamageSound()

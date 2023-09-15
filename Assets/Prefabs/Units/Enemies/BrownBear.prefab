@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 620656305532928000}
   - component: {fileID: 8403902068753454653}
+  - component: {fileID: 1460620806781692348}
   m_Layer: 7
   m_Name: AttackCollider
   m_TagString: Untagged
@@ -77,6 +78,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.55, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &1460620806781692348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347109249308477115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f757e3e5ce9459f46834cc05e6777ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurtAudioClipVolume: 0.8
+  hurtAudioClip: {fileID: 0}
+  healthBar: {fileID: 0}
+  unit: {fileID: 1377714119037616871}
+--- !u!1 &1238477505747673471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3772463323512829720}
+  m_Layer: 7
+  m_Name: AttackLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3772463323512829720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238477505747673471}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.212, y: -0.138, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4654711381779910117}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1613330123898952371
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +136,7 @@ GameObject:
   - component: {fileID: 4654711381779910117}
   - component: {fileID: 1377714119037616871}
   - component: {fileID: 4518303539516551462}
+  - component: {fileID: 1848274383832541292}
   - component: {fileID: 1972532680186222224}
   - component: {fileID: 5320424328874223996}
   - component: {fileID: 7280202557002001621}
@@ -112,6 +161,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 620656305532928000}
+  - {fileID: 3772463323512829720}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1377714119037616871
@@ -129,12 +179,15 @@ MonoBehaviour:
   baseStrength: 0
   baseAgility: 0
   baseIntelligence: 0
-  baseMovementSpeed: 3
+  baseMovementSpeed: 1
   baseMaximumHealth: 20
   baseHealthRegen: 0
   baseAttackSpeed: 1
+  baseAttackRange: 1
+  baseAttackDamage: 20
   baseMaxHealthPerStrength: 1
   baseHealthRegenPerStrength: 1
+  isMeleeAttacker: 1
 --- !u!114 &4518303539516551462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +202,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5320424328874223996}
   unit: {fileID: 1377714119037616871}
+  healthHaver: {fileID: 1460620806781692348}
+  animationHelper: {fileID: 1848274383832541292}
+  attackLocation: {fileID: 3772463323512829720}
+--- !u!114 &1848274383832541292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613330123898952371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f9318e2236e4f4d994c23b86e2a370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpawnPosition: {fileID: 0}
 --- !u!58 &1972532680186222224
 CircleCollider2D:
   m_ObjectHideFlags: 0

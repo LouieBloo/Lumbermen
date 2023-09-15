@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8771a6fa1458a479de45eb56a758d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  train: {fileID: 2404138960283008290}
 --- !u!50 &8376513189121391996
 Rigidbody2D:
   serializedVersion: 4
@@ -270,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8771a6fa1458a479de45eb56a758d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  train: {fileID: 2404138960283008290}
 --- !u!50 &7102231462653597641
 Rigidbody2D:
   serializedVersion: 4
@@ -441,6 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8771a6fa1458a479de45eb56a758d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  train: {fileID: 2404138960283008290}
 --- !u!50 &6475958890277391301
 Rigidbody2D:
   serializedVersion: 4
@@ -569,8 +572,8 @@ MonoBehaviour:
   accelerationTime: 2
   decelerationDistance: 5
   isMoving: 0
-  waitAtStopTime: 4
-  waitAtStartTime: 2
+  waitAtStopTime: 10
+  waitAtStartTime: 0
 --- !u!212 &8928331508720914831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -635,6 +638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8771a6fa1458a479de45eb56a758d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  train: {fileID: 2404138960283008290}
 --- !u!50 &7991568231463675060
 Rigidbody2D:
   serializedVersion: 4

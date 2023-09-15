@@ -21,7 +21,6 @@ public class CreatureAnimatorHelper : MonoBehaviour
 
     public void attackFinished()
     {
-        Debug.Log("ATTACK FINISHED");
         if (attackCallback != null)
         {
             attackCallback();

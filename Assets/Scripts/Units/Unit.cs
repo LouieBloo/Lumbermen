@@ -20,9 +20,16 @@ public class Unit : MonoBehaviour
     [SerializeField]
     private float baseAttackSpeed = 1f;
     [SerializeField]
+    private float baseAttackRange = 1f;
+    [SerializeField]
+    private float baseAttackDamage = 1f;
+    [SerializeField]
     private float baseMaxHealthPerStrength = 1f;
     [SerializeField]
     private float baseHealthRegenPerStrength = 1f;
+
+    [SerializeField]
+    private bool isMeleeAttacker = true;
 
     Dictionary<StatTypes, UnitStat> stats = new Dictionary<StatTypes, UnitStat>();
 
@@ -49,7 +56,7 @@ public class Unit : MonoBehaviour
         Strength, Agility, Intelligence, 
         MovementSpeed, 
         Health, HealthRegen, MaxHealth, 
-        AttackSpeed, 
+        AttackSpeed, AttackDamage, AttackRange, IsMelee,
         MaxHealthPerStrength, HealthRegenPerStrength,
         Gold
     }
@@ -66,6 +73,9 @@ public class Unit : MonoBehaviour
         stats[StatTypes.MaxHealthPerStrength] = new UnitStat(StatTypes.MaxHealthPerStrength, baseMaxHealthPerStrength);
         stats[StatTypes.HealthRegenPerStrength] = new UnitStat(StatTypes.HealthRegenPerStrength, baseHealthRegenPerStrength);
         stats[StatTypes.MovementSpeed] = new UnitStat(StatTypes.MovementSpeed, baseMovementSpeed);
+        stats[StatTypes.AttackRange] = new UnitStat(StatTypes.AttackRange, baseAttackRange);
+        stats[StatTypes.AttackDamage] = new UnitStat(StatTypes.AttackDamage, baseAttackDamage);
+        stats[StatTypes.IsMelee] = new UnitStat(StatTypes.IsMelee, isMeleeAttacker ? 1 : 0);
     }
 
     public void modifyStat(StatTypes type, float amount)
@@ -95,6 +105,13 @@ public class Unit : MonoBehaviour
     public float maxHealthPerStrength { get { return stats[StatTypes.MaxHealthPerStrength].total; } }
     public float healthRegenPerStrength { get { return stats[StatTypes.HealthRegenPerStrength].total; } }
     public float movementSpeed { get { return stats[StatTypes.MovementSpeed].total; } }
+
+    public float isMelee { get { return stats[StatTypes.IsMelee].total; } }
+
+
+    public float attackSpeed { get { return stats[StatTypes.AttackSpeed].total; } }
+    public float attackRange { get { return stats[StatTypes.AttackRange].total; } }
+    public float attackDamage { get { return stats[StatTypes.AttackDamage].total; } }
 
     public void recalculateModifiers()
     {

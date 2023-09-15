@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour, IDier
     public GameObject unitPrefab;
 
     public EnemyMovement movementScript;
-    public HealthHaver healthHaver;
+    public MeleeAttacker attacker;
 
     void Start()
     {
@@ -20,7 +20,11 @@ public class Enemy : MonoBehaviour, IDier
         movementScript.animator = newEnemy.animator;
         movementScript.unit = newEnemy.unit;
 
-        healthHaver.setup(newEnemy.unit);
+        newEnemy.healthHaver.dier = this;
+
+        attacker.setup(newEnemy);
+
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
     void Update()
