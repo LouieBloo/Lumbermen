@@ -25,21 +25,11 @@ public class AxeMoving : MonoBehaviour
         }
     }
 
-    protected virtual float getXDirection()
-    {
-        return Input.GetAxis("Horizontal");
-    }
-
-    protected virtual float getYDirection()
-    {
-        return Input.GetAxis("Vertical");
-    }
-
     private void Update()
     {
         // Get the horizontal and vertical input axes
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        float horizontal = GameSettings.Instance.getXDirection();
+        float vertical = GameSettings.Instance.getYDirection();
 
         if (turnOffWhenNotMoving)
         {

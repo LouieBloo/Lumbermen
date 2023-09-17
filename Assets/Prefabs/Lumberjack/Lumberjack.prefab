@@ -782,10 +782,12 @@ MonoBehaviour:
   baseHealthRegen: 1
   baseAttackSpeed: 1
   baseAttackRange: 1
-  baseAttackDamage: 1
+  baseAttackDamage: 10
+  baseAttackRadius: 1
   baseMaxHealthPerStrength: 5
   baseHealthRegenPerStrength: 0.01
   isMeleeAttacker: 1
+  baseMovementType: 0
 --- !u!114 &5790185699645319439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,12 +816,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff0942db8788a040901d95a9b03cb5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAttackRange: 0.5
-  baseAttackRadius: 0.5
-  baseAttackSpeed: 1
-  baseDamage: 10
   damagePerAgility: 5
   attackSpeedPerAgility: 0.05
+  attackRadiusMultiplier: 0.5
+  attackRange: 0.29
   autoAttackTurnOnRadius: 5
   animator: {fileID: 2111631947048742442}
   rigidbody: {fileID: 1443324524972178526}

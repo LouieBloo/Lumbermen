@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionFlipper: {fileID: 2678103373949995101}
-  unitPrefab: {fileID: 1613330123898952371, guid: c3ee09b509fbf4c44822abdfb87ef0f8, type: 3}
+  unitPrefab: {fileID: 3518458311451983441, guid: 6faa5dd34182d5842a172261dc143c48, type: 3}
   movementScript: {fileID: 4187462044581226704}
   attacker: {fileID: 5392053277668343540}
 --- !u!114 &4187462044581226704
@@ -68,6 +68,7 @@ MonoBehaviour:
   bodyDirectionFlipper: {fileID: 2678103373949995101}
   animator: {fileID: 0}
   unit: {fileID: 0}
+  debugging: 1
   currentDirection: 4
   distanceToConsiderAtPoint: 0.1
 --- !u!114 &5392053277668343540

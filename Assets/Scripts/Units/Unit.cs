@@ -24,6 +24,8 @@ public class Unit : MonoBehaviour
     [SerializeField]
     private float baseAttackDamage = 1f;
     [SerializeField]
+    private float baseAttackRadius = 1f;
+    [SerializeField]
     private float baseMaxHealthPerStrength = 1f;
     [SerializeField]
     private float baseHealthRegenPerStrength = 1f;
@@ -31,15 +33,20 @@ public class Unit : MonoBehaviour
     [SerializeField]
     private bool isMeleeAttacker = true;
 
+    [SerializeField]
+    private BasicUnitMovement.MovementType baseMovementType;
+
     Dictionary<StatTypes, UnitStat> stats = new Dictionary<StatTypes, UnitStat>();
 
     private List<Modifier> modifiers = new List<Modifier>();
 
     public class UnitStat
     {
-        public float amount;
+        private float amount;
         public float modifiedAmount;
         public StatTypes type;
+
+        private List<Action<float>> callbacks = new List<Action<float>>();
 
         public UnitStat(StatTypes type, float amount) {
             this.type = type;
@@ -50,13 +57,34 @@ public class Unit : MonoBehaviour
         {
             get { return amount + modifiedAmount; }
         }
+
+        public float subscribe(Action<float> callback)
+        {
+            callbacks.Add(callback);
+            flushCallbacks();
+            return total;
+        }
+
+        public void modifyAmount(float amountToModify)
+        {
+            amount += amountToModify;
+            flushCallbacks();
+        }
+
+        private void flushCallbacks()
+        {
+            foreach (var callback in callbacks)
+            {
+                callback(total);
+            }
+        }
     }
 
     public enum StatTypes { 
         Strength, Agility, Intelligence, 
         MovementSpeed, 
         Health, HealthRegen, MaxHealth, 
-        AttackSpeed, AttackDamage, AttackRange, IsMelee,
+        AttackSpeed, AttackDamage, AttackRange, IsMelee, AttackRadius,
         MaxHealthPerStrength, HealthRegenPerStrength,
         Gold
     }
@@ -75,6 +103,7 @@ public class Unit : MonoBehaviour
         stats[StatTypes.MovementSpeed] = new UnitStat(StatTypes.MovementSpeed, baseMovementSpeed);
         stats[StatTypes.AttackRange] = new UnitStat(StatTypes.AttackRange, baseAttackRange);
         stats[StatTypes.AttackDamage] = new UnitStat(StatTypes.AttackDamage, baseAttackDamage);
+        stats[StatTypes.AttackRadius] = new UnitStat(StatTypes.AttackRadius, baseAttackRadius);
         stats[StatTypes.IsMelee] = new UnitStat(StatTypes.IsMelee, isMeleeAttacker ? 1 : 0);
     }
 
@@ -82,8 +111,18 @@ public class Unit : MonoBehaviour
     {
         if (stats.TryGetValue(type, out UnitStat targetStat))
         {
-            targetStat.amount += amount;
+            targetStat.modifyAmount(amount);
         }
+    }
+
+    public float subscribeToStat(StatTypes type, Action<float> callback)
+    {
+        if (stats.TryGetValue(type, out UnitStat targetStat))
+        {
+            return targetStat.subscribe(callback);
+        }
+
+        return 0;
     }
 
     public float strength { get { return stats[StatTypes.Strength].total; }  }
@@ -112,6 +151,9 @@ public class Unit : MonoBehaviour
     public float attackSpeed { get { return stats[StatTypes.AttackSpeed].total; } }
     public float attackRange { get { return stats[StatTypes.AttackRange].total; } }
     public float attackDamage { get { return stats[StatTypes.AttackDamage].total; } }
+    public float attackRadius { get { return stats[StatTypes.AttackRadius].total; } }
+
+    public BasicUnitMovement.MovementType movementType { get { return baseMovementType; } }
 
     public void recalculateModifiers()
     {

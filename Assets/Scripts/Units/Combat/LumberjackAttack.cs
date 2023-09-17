@@ -5,18 +5,10 @@ using UnityEngine.UIElements;
 
 public class LumberjackAttack : MonoBehaviour
 {
-    public float baseAttackRange = 0.5f;
-    public float baseAttackRadius = 0.5f;
-    public float baseAttackSpeed = 1f;
-    public float baseDamage = 10f;
-    public float damagePerAgility = 5f;
-    public float attackSpeedPerAgility = 0.05f;
-
-    private float attackRange;
-    private float attackRadius;
-    private float attackSpeed;
-    private float damage;
-
+    public float damagePerAgility;
+    public float attackSpeedPerAgility;
+    public float attackRadiusMultiplier;
+    public float attackRange = 0.5f;
     public float autoAttackTurnOnRadius = 10f;
 
     private float attackTimer = 99f;
@@ -46,11 +38,6 @@ public class LumberjackAttack : MonoBehaviour
         treeLayer = LayerMask.GetMask("Trees");
 
         lastMovementDirection = Vector2.zero;
-
-        attackRange = baseAttackRange;
-        attackRadius = baseAttackRadius;
-        attackSpeed = baseAttackSpeed;
-        damage = baseDamage;
     }
 
     // Update is called once per frame
@@ -62,7 +49,7 @@ public class LumberjackAttack : MonoBehaviour
         {
             attack();
         }
-        Vector2 moveDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        Vector2 moveDirection = new Vector2(GameSettings.Instance.getXDirection(), GameSettings.Instance.getYDirection()).normalized;
 
         if (moveDirection.sqrMagnitude > 0)
         {
@@ -72,12 +59,12 @@ public class LumberjackAttack : MonoBehaviour
 
     float getDamage()
     {
-        return damage + (damagePerAgility * unit.agility);
+        return unit.attackDamage + (damagePerAgility * unit.agility);
     }
 
     float getAttackSpeed()
     {
-        return attackSpeed - (attackSpeedPerAgility * unit.agility);
+        return unit.attackSpeed - (attackSpeedPerAgility * unit.agility);
     }
 
     void attack()
@@ -90,27 +77,26 @@ public class LumberjackAttack : MonoBehaviour
         
         // Store values for gizmo drawing
         lastCastDirection = lastMovementDirection;
-        lastCastRadius = attackRadius; // Set this to whatever radius you want
+        lastCastRadius = unit.attackRadius * attackRadiusMultiplier; // Set this to whatever radius you want
         lastCastDistance = attackRange; // Set this to whatever distance you want
-        lastCastOrigin = transform.position;
+        //lastCastOrigin = transform.position;
+        lastCastOrigin = (Vector2)transform.position + (lastCastDirection.normalized * lastCastDistance);
 
         // Perform a CircleCast in that direction
 
         int layerMask = ~(1 << playerLayer); // This excludes the player layer
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(lastCastOrigin, lastCastRadius, lastCastDirection, lastCastDistance, layerMask);
+        //RaycastHit2D[] hits = Physics2D.CircleCastAll(lastCastOrigin, lastCastRadius, lastCastDirection, lastCastDistance, layerMask);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(lastCastOrigin, lastCastRadius, layerMask);
 
         // If the CircleCast hit something
         if (hits != null && hits.Length > 0)
         {
-            foreach (RaycastHit2D hit in hits)
+            foreach (Collider2D hit in hits)
             {
-                if (hit.collider != null)
+                HealthHaver healthHaver = hit.gameObject.GetComponent<HealthHaver>();
+                if (healthHaver != null)
                 {
-                    HealthHaver healthHaver = hit.collider.gameObject.GetComponent<HealthHaver>();
-                    if (healthHaver != null)
-                    {
-                        healthHaver.takeDamage(getDamage(),gameObject);
-                    }
+                    healthHaver.takeDamage(getDamage(),gameObject);
                 }
             }
         }

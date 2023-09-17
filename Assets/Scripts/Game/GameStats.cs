@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameStats : MonoBehaviour
 {
     public TMP_Text goldText;
+    public TMP_Text strengthText;
+    public TMP_Text agilityText;
+    public TMP_Text intText;
     public TMP_Text gameTimeText;
 
     private float gameTime;
@@ -18,7 +22,17 @@ public class GameStats : MonoBehaviour
     void Start()
     {
         Player.Instance.subscribeToStat(Unit.StatTypes.Gold, modifyPlayerGold);
+        Debug.Log(Player.Instance.unit.strength);
+        Player.Instance.unit.subscribeToStat(Unit.StatTypes.Strength, modifyPlayerStrength);
+        Player.Instance.unit.subscribeToStat(Unit.StatTypes.Agility, modifyPlayerAgility);
+        Player.Instance.unit.subscribeToStat(Unit.StatTypes.Intelligence, modifyPlayerIntelligence);
     }
+
+    public void restartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     private void Awake()
     {
         // Singleton setup
@@ -52,6 +66,20 @@ public class GameStats : MonoBehaviour
         goldText.text = gold + "";
     }
 
+    private void modifyPlayerStrength(float strength)
+    {
+        strengthText.text = strength + "";
+    }
+
+    private void modifyPlayerAgility(float agility)
+    {
+        agilityText.text = agility + "";
+    }
+
+    private void modifyPlayerIntelligence(float intelligence)
+    {
+        intText.text = intelligence + "";
+    }
 
 
 

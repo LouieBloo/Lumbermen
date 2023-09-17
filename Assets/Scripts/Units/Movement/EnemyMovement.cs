@@ -20,8 +20,16 @@ public class EnemyMovement : BasicUnitMovement
     public override void Start()
     {
         base.Start();
+    }
 
-        StartCoroutine(MoveTowardsTarget());
+    public override void setup(Unit unit, Animator animator)
+    {
+        base.setup(unit, animator);
+
+        if(unit.movementType == MovementType.Ground)
+        {
+            StartCoroutine(MoveTowardsTarget());
+        }
     }
 
     private void Update()
@@ -37,6 +45,9 @@ public class EnemyMovement : BasicUnitMovement
 
     protected override float getXDirection()
     {
+        if (unit.movementType == MovementType.Flying) {
+            return (player.position - transform.position).normalized.x;
+        }
         if (currentPath == null) { return 0; }
         Vector2 direction = (currentPathPosition - transform.position).normalized;
         return direction.x;
@@ -44,6 +55,10 @@ public class EnemyMovement : BasicUnitMovement
 
     protected override float getYDirection()
     {
+        if (unit.movementType == MovementType.Flying)
+        {
+            return (player.position - transform.position).normalized.y;
+        }
         if (currentPath == null) { return 0; }
         Vector2 direction = (currentPathPosition - transform.position).normalized;
         return direction.y;

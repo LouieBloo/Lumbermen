@@ -17,8 +17,10 @@ public class Enemy : MonoBehaviour, IDier
         GameObject spawnedObject = GameObject.Instantiate(unitPrefab,directionFlipper);
 
         SpawnedEnemy newEnemy = spawnedObject.GetComponent<SpawnedEnemy>();
-        movementScript.animator = newEnemy.animator;
-        movementScript.unit = newEnemy.unit;
+        unit = newEnemy.unit;
+        movementScript.setup(newEnemy.unit, newEnemy.animator);
+        /*movementScript.animator = newEnemy.animator;
+        movementScript.unit = newEnemy.unit;*/
 
         newEnemy.healthHaver.dier = this;
 

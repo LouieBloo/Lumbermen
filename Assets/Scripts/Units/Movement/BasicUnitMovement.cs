@@ -7,11 +7,14 @@ public class BasicUnitMovement : MonoBehaviour
     public Transform bodyDirectionFlipper;
     public Animator animator;
 
-
     private Rigidbody2D rb;
     public Unit unit;
     protected Transform player;
     
+    public enum MovementType { Ground, Flying}
+    public bool debugging = false;
+
+    public Joystick joystick;
 
     public enum Direction { North, South, East, West, NotMoving }
     public Direction currentDirection = Direction.NotMoving;
@@ -20,19 +23,20 @@ public class BasicUnitMovement : MonoBehaviour
     public virtual void Start()
     {
         // Get the Rigidbody2D component to apply forces for movement
-        rb = GetComponent<Rigidbody2D>();
-        unit = GetComponent<Unit>();
+        if(rb == null) { rb = GetComponent<Rigidbody2D>();}
+        if(unit == null) { unit = GetComponent<Unit>(); }
+        
         player = Player.Instance.transform;
     }
 
     protected virtual float getXDirection()
     {
-        return Input.GetAxis("Horizontal");
+        return GameSettings.Instance.getXDirection();
     }
 
     protected virtual float getYDirection()
     {
-        return Input.GetAxis("Vertical");
+        return GameSettings.Instance.getYDirection();
     }
 
     protected virtual void processNextTarget()
@@ -40,9 +44,16 @@ public class BasicUnitMovement : MonoBehaviour
 
     }
 
+    public virtual void setup(Unit unit, Animator animator)
+    {
+        this.unit = unit;
+        this.animator = animator;
+    }
+
     // FixedUpdate is called once per frame, but at a fixed interval - better for physics calculations
     void FixedUpdate()
     {
+        if(unit == null) { return; }
         // Horizontal movement (A/D keys)
         float moveX = getXDirection();
 
@@ -51,6 +62,7 @@ public class BasicUnitMovement : MonoBehaviour
 
         // Create a movement vector
         Vector2 movement = new Vector2(moveX, moveY);
+
 
         // Apply the velocity to the Rigidbody2D
         rb.velocity = movement * unit.movementSpeed;

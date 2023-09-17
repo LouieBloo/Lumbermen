@@ -91,7 +91,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hurtAudioClipVolume: 0.8
-  hurtAudioClip: {fileID: 0}
+  hurtAudioClip: {fileID: 8300000, guid: 641b5b370639d8d47b592b65b84ad476, type: 3}
+  damageParticlePrefab: {fileID: 1343403142510778093, guid: 97e15b4eee866e0418f4fbbf2fd4ec17, type: 3}
   healthBar: {fileID: 0}
   unit: {fileID: 1377714119037616871}
 --- !u!1 &1238477505747673471

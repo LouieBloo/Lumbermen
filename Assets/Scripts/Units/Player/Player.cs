@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Unit;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDier
 {
     public static Player Instance { get; private set; }
     public Unit unit;
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             stats[StatTypes.Gold].modifyAmount(10);
-        }    
+        }
     }
 
     public float subscribeToStat(StatTypes type, Action<float> callback)
@@ -47,4 +48,8 @@ public class Player : MonoBehaviour
         return stats[type].amount;
     }
 
+    public void die(GameObject source)
+    {
+        gameObject.SetActive(false);
+    }
 }
