@@ -33,7 +33,8 @@ public class Player : MonoBehaviour, IDier
     {
         if(Input.GetMouseButtonDown(0))
         {
-            stats[StatTypes.Gold].modifyAmount(10);
+            //stats[StatTypes.Gold].modifyAmount(10);
+            unit.wow();
         }
     }
 

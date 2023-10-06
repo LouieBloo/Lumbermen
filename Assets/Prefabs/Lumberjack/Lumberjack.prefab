@@ -717,15 +717,16 @@ GameObject:
   - component: {fileID: 3655980051714746469}
   - component: {fileID: 3411438631300122513}
   - component: {fileID: 1587119821557698780}
+  - component: {fileID: 7969113412132729832}
   - component: {fileID: 5210096122368959868}
   - component: {fileID: 5016391956913786178}
+  - component: {fileID: 5578161161198587290}
   - component: {fileID: 1443324524972178526}
   - component: {fileID: 2111631947048742442}
-  - component: {fileID: 5578161161198587290}
   - component: {fileID: 3434327142035940783}
   m_Layer: 3
   m_Name: Lumberjack
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -788,6 +789,7 @@ MonoBehaviour:
   baseHealthRegenPerStrength: 0.01
   isMeleeAttacker: 1
   baseMovementType: 0
+  equipmentHolder: {fileID: 7969113412132729832}
 --- !u!114 &5790185699645319439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,6 +805,8 @@ MonoBehaviour:
   bodyDirectionFlipper: {fileID: 7169006861461544283}
   animator: {fileID: 2111631947048742442}
   unit: {fileID: 0}
+  debugging: 0
+  joystick: {fileID: 0}
   currentDirection: 4
 --- !u!114 &1551026905561167371
 MonoBehaviour:
@@ -823,6 +827,7 @@ MonoBehaviour:
   autoAttackTurnOnRadius: 5
   animator: {fileID: 2111631947048742442}
   rigidbody: {fileID: 1443324524972178526}
+  animationHelper: {fileID: 5578161161198587290}
 --- !u!114 &3655980051714746469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -886,6 +891,18 @@ MonoBehaviour:
     strengthGain: 1
     agilityGain: 1
     intelligenceGain: 1
+--- !u!114 &7969113412132729832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548227521053247028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71133b2eab4fb04e85cfd36e13eaa00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5210096122368959868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,6 +929,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 944aeb935a3053a4489c2649cfbb7641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5578161161198587290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548227521053247028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f9318e2236e4f4d994c23b86e2a370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpawnPosition: {fileID: 0}
+  animator: {fileID: 2111631947048742442}
 --- !u!50 &1443324524972178526
 Rigidbody2D:
   serializedVersion: 4
@@ -960,19 +991,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5578161161198587290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5548227521053247028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6f9318e2236e4f4d994c23b86e2a370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileSpawnPosition: {fileID: 0}
 --- !u!58 &3434327142035940783
 CircleCollider2D:
   m_ObjectHideFlags: 0

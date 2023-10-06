@@ -15,6 +15,7 @@ public class LumberjackAttack : MonoBehaviour
 
     public Animator animator;
     public Rigidbody2D rigidbody;
+    public CreatureAnimatorHelper animationHelper;
 
     private int playerLayer;
     private int treeLayer;
@@ -33,6 +34,8 @@ public class LumberjackAttack : MonoBehaviour
     void Start()
     {
         unit = GetComponent<Unit>();
+        unit.subscribeToStat(Unit.StatTypes.AttackSpeed, unitStatUpdated);
+        unit.subscribeToStat(Unit.StatTypes.Agility, unitStatUpdated);
 
         playerLayer = LayerMask.NameToLayer("Player");
         treeLayer = LayerMask.GetMask("Trees");
@@ -55,6 +58,11 @@ public class LumberjackAttack : MonoBehaviour
         {
             lastMovementDirection = moveDirection;
         }
+    }
+
+    void unitStatUpdated(float stat)
+    {
+        animationHelper.setAttackAnimationSpeed(2.0f - getAttackSpeed());
     }
 
     float getDamage()

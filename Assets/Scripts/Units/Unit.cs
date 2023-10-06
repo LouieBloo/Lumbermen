@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
@@ -38,12 +39,14 @@ public class Unit : MonoBehaviour
 
     Dictionary<StatTypes, UnitStat> stats = new Dictionary<StatTypes, UnitStat>();
 
-    private List<Modifier> modifiers = new List<Modifier>();
+    private List<Modification> modifications = new List<Modification>();
+
+    public EquipmentHolder equipmentHolder;
 
     public class UnitStat
     {
         private float amount;
-        public float modifiedAmount;
+        private float modifiedAmount;
         public StatTypes type;
 
         private List<Action<float>> callbacks = new List<Action<float>>();
@@ -68,6 +71,12 @@ public class Unit : MonoBehaviour
         public void modifyAmount(float amountToModify)
         {
             amount += amountToModify;
+            flushCallbacks();
+        }
+
+        public void modifyModifyAmount(float amountToModify)
+        {
+            modifiedAmount += amountToModify;
             flushCallbacks();
         }
 
@@ -155,9 +164,37 @@ public class Unit : MonoBehaviour
 
     public BasicUnitMovement.MovementType movementType { get { return baseMovementType; } }
 
-    public void recalculateModifiers()
+    public void addModifier(IModifier modifierToAdd)
     {
+        foreach(Modification mod in modifierToAdd.getModifications())
+        {
+            modifications.Add(mod);
+            recalculateModifier(mod.statType, mod.amount);
+        }
+    }
 
+    public void deleteModifier(IModifier modifierToDelete)
+    {
+        
+        // notice the - on amount
+        foreach (Modification mod in modifierToDelete.getModifications())
+        {
+            modifications.Remove(mod);
+            recalculateModifier(mod.statType, -mod.amount);
+        }
+    }
+
+    public void recalculateModifier(StatTypes statType, float amount)
+    {
+        stats[statType].modifyModifyAmount(amount);
+    }
+
+    public void wow()
+    {
+        foreach (Modification mod in modifications)
+        {
+            Debug.Log(mod.statType + " " + mod.amount);
+        }
     }
 
 }
