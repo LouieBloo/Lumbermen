@@ -7,14 +7,14 @@ public class Enemy : MonoBehaviour, IDier
     private Unit unit;
 
     public Transform directionFlipper;
-    public GameObject unitPrefab;
+    public AllUnitPrefabs.UnitName unitName;
 
     public EnemyMovement movementScript;
-    public MeleeAttacker attacker;
+    private Weapon weapon;
 
     void Start()
     {
-        GameObject spawnedObject = GameObject.Instantiate(unitPrefab,directionFlipper);
+        GameObject spawnedObject = GameObject.Instantiate(AllUnitPrefabs.Instance.getUnit(unitName),directionFlipper);
 
         SpawnedEnemy newEnemy = spawnedObject.GetComponent<SpawnedEnemy>();
         unit = newEnemy.unit;
@@ -24,7 +24,9 @@ public class Enemy : MonoBehaviour, IDier
 
         newEnemy.healthHaver.dier = this;
 
-        attacker.setup(newEnemy);
+        //spawn the weapon
+        GameObject spawnedWeapon = GameObject.Instantiate(AllUnitPrefabs.Instance.getWeapon(unit.weaponToSpawn), unit.weaponLocation.transform);
+        spawnedWeapon.GetComponent<Weapon>().setup(newEnemy.unit, newEnemy.animationHelper);
 
         GetComponent<SpriteRenderer>().enabled = false;
     }

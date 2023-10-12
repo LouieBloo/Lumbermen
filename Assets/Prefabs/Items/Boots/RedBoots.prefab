@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7472902815602137237
+--- !u!1 &1015443688160077183
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5080917408348718950}
-  - component: {fileID: 1535471855430247735}
-  - component: {fileID: 5014635140445832325}
-  - component: {fileID: 4937164885431785179}
-  - component: {fileID: 4933121829713978684}
+  - component: {fileID: 777026476384059381}
+  - component: {fileID: 2738224005563982686}
+  - component: {fileID: 2726348569800538844}
+  - component: {fileID: 5694318938455920110}
+  - component: {fileID: 7783923458680240760}
   m_Layer: 0
-  m_Name: BasicBoots
+  m_Name: RedBoots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5080917408348718950
+--- !u!4 &777026476384059381
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7472902815602137237}
+  m_GameObject: {fileID: 1015443688160077183}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.48, y: -4.49, z: 0}
@@ -35,13 +35,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1535471855430247735
+--- !u!114 &2738224005563982686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7472902815602137237}
+  m_GameObject: {fileID: 1015443688160077183}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8dc962f06ef89bd42b062f3c9aebc905, type: 3}
@@ -49,29 +49,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modifications:
   - statType: 3
-    amount: 5
-  name: Brown Boots
+    amount: 0.75
+  - statType: 0
+    amount: 2
+  name: Red Boots
   slotType: 1
---- !u!114 &5014635140445832325
+--- !u!114 &2726348569800538844
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7472902815602137237}
+  m_GameObject: {fileID: 1015443688160077183}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e625064000708047bf2bd3957912ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   capacitySpace: 0
---- !u!212 &4937164885431785179
+--- !u!212 &5694318938455920110
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7472902815602137237}
+  m_GameObject: {fileID: 1015443688160077183}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -106,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b535442f5a3996c4492b284ac967c934, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bd8ad39b92a40c4696aa61d78aabca8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,13 +119,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4933121829713978684
+--- !u!61 &7783923458680240760
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7472902815602137237}
+  m_GameObject: {fileID: 1015443688160077183}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -153,7 +155,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.95, y: 4.92}
+    oldSize: {x: 3.82, y: 4.88}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

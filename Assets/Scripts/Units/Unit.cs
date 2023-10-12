@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static AllUnitPrefabs;
 
 public class Unit : MonoBehaviour
 {
@@ -31,8 +32,7 @@ public class Unit : MonoBehaviour
     [SerializeField]
     private float baseHealthRegenPerStrength = 1f;
 
-    [SerializeField]
-    private bool isMeleeAttacker = true;
+    public bool isEnemy = true;
 
     [SerializeField]
     private BasicUnitMovement.MovementType baseMovementType;
@@ -42,6 +42,11 @@ public class Unit : MonoBehaviour
     private List<Modification> modifications = new List<Modification>();
 
     public EquipmentHolder equipmentHolder;
+
+    [SerializeField]
+    public AllUnitPrefabs.WeaponName weaponToSpawn;
+
+    public Transform weaponLocation;
 
     public class UnitStat
     {
@@ -113,7 +118,6 @@ public class Unit : MonoBehaviour
         stats[StatTypes.AttackRange] = new UnitStat(StatTypes.AttackRange, baseAttackRange);
         stats[StatTypes.AttackDamage] = new UnitStat(StatTypes.AttackDamage, baseAttackDamage);
         stats[StatTypes.AttackRadius] = new UnitStat(StatTypes.AttackRadius, baseAttackRadius);
-        stats[StatTypes.IsMelee] = new UnitStat(StatTypes.IsMelee, isMeleeAttacker ? 1 : 0);
     }
 
     public void modifyStat(StatTypes type, float amount)

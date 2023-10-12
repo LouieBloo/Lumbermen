@@ -105,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3772463323512829720}
   m_Layer: 7
-  m_Name: AttackLocation
+  m_Name: WeaponLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,11 +184,16 @@ MonoBehaviour:
   baseMaximumHealth: 20
   baseHealthRegen: 0
   baseAttackSpeed: 1
-  baseAttackRange: 1
-  baseAttackDamage: 20
-  baseMaxHealthPerStrength: 1
-  baseHealthRegenPerStrength: 1
-  isMeleeAttacker: 1
+  baseAttackRange: 0
+  baseAttackDamage: 0
+  baseAttackRadius: 0
+  baseMaxHealthPerStrength: 0
+  baseHealthRegenPerStrength: 0
+  isEnemy: 1
+  baseMovementType: 0
+  equipmentHolder: {fileID: 0}
+  weaponToSpawn: 0
+  weaponLocation: {fileID: 3772463323512829720}
 --- !u!114 &4518303539516551462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +210,6 @@ MonoBehaviour:
   unit: {fileID: 1377714119037616871}
   healthHaver: {fileID: 1460620806781692348}
   animationHelper: {fileID: 1848274383832541292}
-  attackLocation: {fileID: 3772463323512829720}
 --- !u!114 &1848274383832541292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawnPosition: {fileID: 0}
+  animator: {fileID: 5320424328874223996}
 --- !u!58 &1972532680186222224
 CircleCollider2D:
   m_ObjectHideFlags: 0

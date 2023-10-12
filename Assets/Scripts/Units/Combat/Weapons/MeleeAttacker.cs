@@ -31,7 +31,7 @@ public class MeleeAttacker : MonoBehaviour
         this.animationHelper = newEnemy.animationHelper;
         this.animator = newEnemy.animator;
 
-        positionToCheckForEnemies = newEnemy.attackLocation;
+        positionToCheckForEnemies = newEnemy.unit.weaponLocation;
 
         animationHelper.subscribeAttack(attackAnimationFinished);
     }

@@ -8,7 +8,6 @@ public class SpawnedEnemy : MonoBehaviour
     public Unit unit;
     public HealthHaver healthHaver;
     public CreatureAnimatorHelper animationHelper;
-    public Transform attackLocation;
     void Start()
     {
         

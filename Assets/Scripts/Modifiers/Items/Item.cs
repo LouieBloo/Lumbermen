@@ -7,17 +7,33 @@ public class Item : MonoBehaviour, IModifier
     [SerializeField]
     private Modification[] modifications;
 
+    [SerializeField]
+    private string name;
     public EquipmentHolder.SlotType slotType;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
 
     public Modification[] getModifications()
     {
         return modifications;
+    }
+
+    public Sprite getSprite()
+    {
+        return GetComponent<SpriteRenderer>().sprite;
+    }
+
+    public string getName()
+    {
+        return name;
+    }
+
+    public string getDescription()
+    {
+        string description = "";
+        foreach(Modification mod in modifications)
+        {
+            description += mod.statType + " by " + mod.amount + "\n";
+        }
+
+        return description;
     }
 }
