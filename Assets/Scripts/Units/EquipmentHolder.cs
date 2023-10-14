@@ -7,7 +7,7 @@ using static UnityEditor.Progress;
 
 public class EquipmentHolder : MonoBehaviour
 {
-
+    public AllUnitPrefabs.WeaponName startingWeapon;
     private Dictionary<SlotType, Item> equipment = new Dictionary<SlotType, Item>();
 
     /*public class EquipmentSlot
@@ -18,7 +18,7 @@ public class EquipmentHolder : MonoBehaviour
 
     public enum SlotType
     {
-        Helmet, Feet, None
+        Helmet, Feet, Weapon, None
     }
 
     public void addItem(Item item)
@@ -52,6 +52,8 @@ public class EquipmentHolder : MonoBehaviour
         // Equip the choice item
         equipment[choiceItem.slotType] = choiceItem;
         GetComponent<Unit>().addModifier(choiceItem);
-        choiceItem.gameObject.SetActive(false);
+        choiceItem.equipped();
     }
+
+
 }

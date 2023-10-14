@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 4654711381779910117}
   - component: {fileID: 1377714119037616871}
   - component: {fileID: 4518303539516551462}
+  - component: {fileID: 2367962028160906}
   - component: {fileID: 1848274383832541292}
   - component: {fileID: 1972532680186222224}
   - component: {fileID: 5320424328874223996}
@@ -191,8 +192,7 @@ MonoBehaviour:
   baseHealthRegenPerStrength: 0
   isEnemy: 1
   baseMovementType: 0
-  equipmentHolder: {fileID: 0}
-  weaponToSpawn: 0
+  equipmentHolder: {fileID: 2367962028160906}
   weaponLocation: {fileID: 3772463323512829720}
 --- !u!114 &4518303539516551462
 MonoBehaviour:
@@ -210,6 +210,19 @@ MonoBehaviour:
   unit: {fileID: 1377714119037616871}
   healthHaver: {fileID: 1460620806781692348}
   animationHelper: {fileID: 1848274383832541292}
+--- !u!114 &2367962028160906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613330123898952371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71133b2eab4fb04e85cfd36e13eaa00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingWeapon: 0
 --- !u!114 &1848274383832541292
 MonoBehaviour:
   m_ObjectHideFlags: 0

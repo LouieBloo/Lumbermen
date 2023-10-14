@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour, IDier
     public AllUnitPrefabs.UnitName unitName;
 
     public EnemyMovement movementScript;
-    private Weapon weapon;
 
     void Start()
     {
@@ -25,7 +24,15 @@ public class Enemy : MonoBehaviour, IDier
         newEnemy.healthHaver.dier = this;
 
         //spawn the weapon
-        GameObject spawnedWeapon = GameObject.Instantiate(AllUnitPrefabs.Instance.getWeapon(unit.weaponToSpawn), unit.weaponLocation.transform);
+        //GameObject spawnedWeapon = GameObject.Instantiate(AllUnitPrefabs.Instance.getWeapon(unit.weaponToSpawn), unit.weaponLocation.transform);
+
+        GameObject spawnedWeapon = Instantiate(AllUnitPrefabs.Instance.getWeapon(unit.equipmentHolder.startingWeapon));
+        // Set the weapon's parent while preserving its world position, rotation, and scale
+        spawnedWeapon.transform.SetParent(unit.weaponLocation.transform,true);
+        spawnedWeapon.transform.localPosition = Vector3.zero;
+        unit.equipmentHolder.addItem(spawnedWeapon.GetComponent<Item>());
+
+
         spawnedWeapon.GetComponent<Weapon>().setup(newEnemy.unit, newEnemy.animationHelper);
 
         GetComponent<SpriteRenderer>().enabled = false;

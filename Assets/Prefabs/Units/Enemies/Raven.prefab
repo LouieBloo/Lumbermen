@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9002163698925382701}
   - component: {fileID: 5528660040348423068}
   - component: {fileID: 4426597255362301312}
+  - component: {fileID: -92589476866394468}
   - component: {fileID: 2367724905183535262}
   - component: {fileID: 1515126337895920425}
   - component: {fileID: 4673534928956557713}
@@ -57,14 +58,16 @@ MonoBehaviour:
   baseMovementSpeed: 2
   baseMaximumHealth: 10
   baseHealthRegen: 0
-  baseAttackSpeed: 1
-  baseAttackRange: 1
-  baseAttackDamage: 5
-  baseAttackRadius: 1
-  baseMaxHealthPerStrength: 1
-  baseHealthRegenPerStrength: 1
-  isMeleeAttacker: 1
+  baseAttackSpeed: 0
+  baseAttackRange: 0
+  baseAttackDamage: 0
+  baseAttackRadius: 0
+  baseMaxHealthPerStrength: 0
+  baseHealthRegenPerStrength: 0
+  isEnemy: 1
   baseMovementType: 1
+  equipmentHolder: {fileID: -92589476866394468}
+  weaponLocation: {fileID: 7884206673341646022}
 --- !u!114 &4426597255362301312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +84,19 @@ MonoBehaviour:
   unit: {fileID: 5528660040348423068}
   healthHaver: {fileID: 1749014657615625259}
   animationHelper: {fileID: 2367724905183535262}
-  attackLocation: {fileID: 7884206673341646022}
+--- !u!114 &-92589476866394468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518458311451983441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c71133b2eab4fb04e85cfd36e13eaa00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingWeapon: 1
 --- !u!114 &2367724905183535262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpawnPosition: {fileID: 0}
+  animator: {fileID: 4673534928956557713}
 --- !u!58 &1515126337895920425
 CircleCollider2D:
   m_ObjectHideFlags: 0

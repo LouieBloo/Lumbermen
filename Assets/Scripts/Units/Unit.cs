@@ -43,9 +43,6 @@ public class Unit : MonoBehaviour
 
     public EquipmentHolder equipmentHolder;
 
-    [SerializeField]
-    public AllUnitPrefabs.WeaponName weaponToSpawn;
-
     public Transform weaponLocation;
 
     public class UnitStat

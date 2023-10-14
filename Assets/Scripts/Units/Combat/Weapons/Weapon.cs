@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Playables;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Weapon : Item
 {
     public float damage;
     public float damagePerAgility;
@@ -32,6 +32,8 @@ public class Weapon : MonoBehaviour
     private CreatureAnimatorHelper unitAnimationHelper;
 
     private Unit unit;
+
+    private GameObject target;
 
     void Awake()
     {
@@ -69,6 +71,11 @@ public class Weapon : MonoBehaviour
     void attack()
     {
         attacking = true;
+
+        if(target != null)
+        {
+        }
+
         animationHelper.animator.SetTrigger("Attack");
         unitAnimationHelper.animator.SetTrigger("Attack");
     }
@@ -78,7 +85,7 @@ public class Weapon : MonoBehaviour
         attackTimer = 0;
         attacking = false;
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, getRange(), targetLayerMask);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, getRadius(), targetLayerMask);
         // If the CircleCast hit something
         if (hits != null && hits.Length > 0)
         {
@@ -104,10 +111,17 @@ public class Weapon : MonoBehaviour
 
     bool isAroundEnemy()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(unit.weaponLocation.position, getRange(), targetLayerMask);
-        bool aroundEnemies = hits != null && hits.Length > 0;
-
-        return aroundEnemies;
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, getRange(), targetLayerMask);
+        if(hits != null && hits.Length > 0)
+        {
+            target = hits[0].gameObject;
+            return true;
+        }
+        else
+        {
+            target = null;
+            return false;
+        }
     }
 
     void attackSpeedAnimationUpdate(float stat)
@@ -130,5 +144,10 @@ public class Weapon : MonoBehaviour
     protected virtual float getRange()
     {
         return attackRange + unit.attackRange;
+    }
+
+    protected virtual float getRadius()
+    {
+        return attackRadius + unit.attackRadius;
     }
 }

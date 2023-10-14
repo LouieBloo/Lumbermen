@@ -5,6 +5,9 @@ using UnityEngine;
 public class Item : MonoBehaviour, IModifier
 {
     [SerializeField]
+    private bool disableOnEquip = true;
+
+    [SerializeField]
     private Modification[] modifications;
 
     [SerializeField]
@@ -35,5 +38,13 @@ public class Item : MonoBehaviour, IModifier
         }
 
         return description;
+    }
+
+    public void equipped()
+    {
+        if (disableOnEquip)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

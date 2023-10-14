@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8448041672870968855}
@@ -47,6 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a78e13c0ae0764e97d7f12b3de0daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableOnEquip: 0
+  modifications: []
+  name: 
+  slotType: 2
   damage: 10
   damagePerAgility: 0
   damagePerStrength: 0
@@ -55,7 +59,7 @@ MonoBehaviour:
   attackSpeedPerAgility: 0
   attackRange: 2
   attackRangeMultiplier: 0
-  attackRadius: 0
+  attackRadius: 0.75
   attackRadiusMultiplier: 0
   animationHelper: {fileID: 1507478630218707223}
 --- !u!114 &1507478630218707223
@@ -120,7 +124,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1480665211383641654}

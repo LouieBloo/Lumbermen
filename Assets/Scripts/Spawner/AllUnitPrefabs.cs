@@ -52,7 +52,8 @@ public class AllUnitPrefabs : MonoBehaviour
 
     public enum WeaponName
     {
-        BearSlash
+        BearSlash,
+        RavenSlash
     }
 
     public GameObject sprout;
