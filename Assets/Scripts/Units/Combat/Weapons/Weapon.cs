@@ -23,15 +23,15 @@ public class Weapon : Item
 
     protected bool attacking = false;
 
-    private LayerMask playerLayerMask;
-    private LayerMask enemyLayerMask;
-    private LayerMask targetLayerMask;
+    protected LayerMask playerLayerMask;
+    protected LayerMask enemyLayerMask;
+    protected LayerMask targetLayerMask;
 
     [SerializeField]
     private CreatureAnimatorHelper animationHelper;
     private CreatureAnimatorHelper unitAnimationHelper;
 
-    private Unit unit;
+    protected Unit unit;
 
     private GameObject target;
 
@@ -42,7 +42,7 @@ public class Weapon : Item
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         animationHelper.subscribeAttack(attackAnimationFinished);
     }
@@ -58,7 +58,7 @@ public class Weapon : Item
         targetLayerMask = unit.isEnemy ? playerLayerMask : enemyLayerMask;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         attackTimer += Time.deltaTime;
 
@@ -68,7 +68,7 @@ public class Weapon : Item
         }
     }
 
-    void attack()
+    protected virtual void attack()
     {
         attacking = true;
 
@@ -80,7 +80,7 @@ public class Weapon : Item
         unitAnimationHelper.animator.SetTrigger("Attack");
     }
 
-    public void attackAnimationFinished()
+    public virtual void attackAnimationFinished()
     {
         attackTimer = 0;
         attacking = false;
@@ -104,12 +104,12 @@ public class Weapon : Item
     }
 
 
-    bool canAttack()
+    protected virtual bool canAttack()
     {
         return !attacking && attackTimer >= getAttackSpeed() && isAroundEnemy();
     }
 
-    bool isAroundEnemy()
+    protected virtual bool isAroundEnemy()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, getRange(), targetLayerMask);
         if(hits != null && hits.Length > 0)
@@ -130,12 +130,12 @@ public class Weapon : Item
         unitAnimationHelper.setAttackAnimationSpeed(2.0f - getAttackSpeed());
     }
 
-    float getAttackSpeed()
+    protected virtual float getAttackSpeed()
     {
         return attackSpeed - unit.attackSpeed - (attackSpeedPerAgility * unit.agility);
     }
 
-    float getDamage()
+    protected virtual float getDamage()
     {
         return damage + unit.attackDamage + (damagePerAgility * unit.agility) + (damagePerStrength * unit.strength) + (damagePerIntelligence * unit.intelligence);
         //return damage + (unit.agi damagePerAgility * unit.agility);
