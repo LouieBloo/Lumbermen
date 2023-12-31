@@ -55,7 +55,7 @@ MonoBehaviour:
   baseStrength: 0
   baseAgility: 0
   baseIntelligence: 0
-  baseMovementSpeed: 2
+  baseMovementSpeed: 0
   baseMaximumHealth: 10
   baseHealthRegen: 0
   baseAttackSpeed: 0

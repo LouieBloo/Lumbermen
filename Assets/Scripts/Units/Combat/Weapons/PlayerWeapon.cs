@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerWeapon : Weapon
 {
-    private Vector2 lastMovementDirection;
+    protected Vector2 lastMovementDirection;
 
     public float autoAttackTurnOnRadius = 10f;
 
@@ -43,7 +43,7 @@ public class PlayerWeapon : Weapon
         return !attacking && attackTimer >= getAttackSpeed() && isAroundTrees();
     }
 
-    bool isAroundTrees()
+    protected virtual bool isAroundTrees()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, autoAttackTurnOnRadius, treeLayer);
         bool aroundTrees = hits != null && hits.Length > 0;

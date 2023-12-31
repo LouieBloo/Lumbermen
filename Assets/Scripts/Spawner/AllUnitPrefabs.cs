@@ -7,37 +7,45 @@ public class AllUnitPrefabs : MonoBehaviour
 
     public static AllUnitPrefabs Instance { get; private set; }
 
-    [System.Serializable] //This attribute makes the class show up in the Unity inspector
+    [System.Serializable] 
     public class PrefabHolder
     {
         public GameObject prefab;
     }
 
-    [System.Serializable] //This attribute makes the class show up in the Unity inspector
+    [System.Serializable] 
     public class UnitHolder : PrefabHolder
     {
         public UnitName name;
     }
 
-    [System.Serializable] //This attribute makes the class show up in the Unity inspector
+    [System.Serializable] 
     public class WeaponHolder : PrefabHolder
     {
         public WeaponName name;
     }
 
-    [System.Serializable] //This attribute makes the class show up in the Unity inspector
+    [System.Serializable] 
     public class ItemHolder : PrefabHolder
     {
         public ItemName name;
     }
 
+    [System.Serializable] 
+    public class ProjectileHolder : PrefabHolder
+    {
+        public ProjectileName name;
+    }
+
     public UnitHolder[] unitPrefabs;
     public WeaponHolder[] weaponPrefabs;
     public ItemHolder[] itemPrefabs;
+    public ProjectileHolder[] projectilePrefabs;
 
     private Dictionary<UnitName, GameObject> allUnits = new Dictionary<UnitName, GameObject>();
     private Dictionary<WeaponName, GameObject> allWeapons = new Dictionary<WeaponName, GameObject>();
     private Dictionary<ItemName, GameObject> allItems = new Dictionary<ItemName, GameObject>();
+    private Dictionary<ProjectileName, GameObject> allProjectiles = new Dictionary<ProjectileName, GameObject>();
 
     public enum UnitName {
         BrownBear,
@@ -54,7 +62,13 @@ public class AllUnitPrefabs : MonoBehaviour
     {
         BearSlash,
         RavenSlash,
-        BasicAxe
+        BasicAxe,
+        BasicThrowingAxe
+    }
+
+    public enum ProjectileName
+    {
+        BasicAxe,
     }
 
     public GameObject sprout;
@@ -86,6 +100,11 @@ public class AllUnitPrefabs : MonoBehaviour
             allItems[holder.name] = holder.prefab;
         }
 
+        foreach (ProjectileHolder holder in projectilePrefabs)
+        {
+            allProjectiles[holder.name] = holder.prefab;
+        }
+
     }
 
     public GameObject getUnit(UnitName name)
@@ -103,5 +122,9 @@ public class AllUnitPrefabs : MonoBehaviour
         return allItems[name];
     }
 
+    public GameObject getProjectile(ProjectileName name)
+    {
+        return allProjectiles[name];
+    }
 
 }

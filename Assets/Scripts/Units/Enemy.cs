@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour, IDier
 
     public EnemyMovement movementScript;
 
+    public HealthHaver healthHaver;
+
     void Start()
     {
         GameObject spawnedObject = GameObject.Instantiate(AllUnitPrefabs.Instance.getUnit(unitName),directionFlipper);
@@ -22,6 +24,7 @@ public class Enemy : MonoBehaviour, IDier
         movementScript.unit = newEnemy.unit;*/
 
         newEnemy.healthHaver.dier = this;
+        healthHaver = newEnemy.healthHaver;
 
         //spawn the weapon
         //GameObject spawnedWeapon = GameObject.Instantiate(AllUnitPrefabs.Instance.getWeapon(unit.weaponToSpawn), unit.weaponLocation.transform);
