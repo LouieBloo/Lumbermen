@@ -30,6 +30,8 @@ public class PlayerWeapon : Weapon
     {
         base.Update();
 
+        if (!pickedUp) { return; }
+
         Vector2 moveDirection = new Vector2(GameSettings.Instance.getXDirection(), GameSettings.Instance.getYDirection()).normalized;
 
         if (moveDirection.sqrMagnitude > 0)

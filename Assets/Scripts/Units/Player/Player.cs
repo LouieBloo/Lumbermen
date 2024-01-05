@@ -35,12 +35,10 @@ public class Player : MonoBehaviour, IDier
         //weapon start
         GameObject spawnedWeapon = Instantiate(AllUnitPrefabs.Instance.getWeapon(unit.equipmentHolder.startingWeapon));
         // Set the weapon's parent while preserving its world position, rotation, and scale
-        spawnedWeapon.transform.SetParent(unit.weaponLocation.transform, true);
-        spawnedWeapon.transform.localPosition = Vector3.zero;
+        //spawnedWeapon.transform.SetParent(unit.weaponLocation.transform, true);
+        //spawnedWeapon.transform.localPosition = Vector3.zero;
         unit.equipmentHolder.addItem(spawnedWeapon.GetComponent<Item>());
-
-
-        spawnedWeapon.GetComponent<Weapon>().setup(unit, GetComponent<CreatureAnimatorHelper>());
+        //spawnedWeapon.GetComponent<Weapon>().setup(unit, GetComponent<CreatureAnimatorHelper>());
     }
 
     void Update()

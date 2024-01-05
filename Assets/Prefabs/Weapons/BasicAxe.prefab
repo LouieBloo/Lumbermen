@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c9bfc22c5058a428c75d5d4fcf2602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickedUp: 0
   disableOnEquip: 0
+  iconSpriteRenderer: {fileID: 2087963361883899278}
   modifications: []
   name: 
   slotType: 2

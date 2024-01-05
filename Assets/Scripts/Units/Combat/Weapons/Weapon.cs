@@ -31,8 +31,6 @@ public class Weapon : Item
     private CreatureAnimatorHelper animationHelper;
     private CreatureAnimatorHelper unitAnimationHelper;
 
-    protected Unit unit;
-
     private GameObject target;
 
     void Awake()
@@ -47,19 +45,24 @@ public class Weapon : Item
         animationHelper.subscribeAttack(attackAnimationFinished);
     }
 
-    public void setup(Unit unitIn, CreatureAnimatorHelper animationHelper)
+    public override void equipped(Unit unit, CreatureAnimatorHelper animationHelperIn)
     {
-        unit = unitIn;
-        this.unitAnimationHelper = animationHelper;
+        base.equipped(unit, animationHelperIn);
+
+        this.unitAnimationHelper = animationHelperIn;
 
         unit.subscribeToStat(Unit.StatTypes.AttackSpeed, attackSpeedAnimationUpdate);
         unit.subscribeToStat(Unit.StatTypes.Agility, attackSpeedAnimationUpdate);
 
         targetLayerMask = unit.isEnemy ? playerLayerMask : enemyLayerMask;
+
+        transform.SetParent(unit.weaponLocation.transform, true);
+        transform.localPosition = Vector3.zero;
     }
 
     protected virtual void Update()
     {
+        if (!pickedUp) { return; }
         attackTimer += Time.deltaTime;
 
         if (canAttack())

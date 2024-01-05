@@ -31,12 +31,10 @@ public class Enemy : MonoBehaviour, IDier
 
         GameObject spawnedWeapon = Instantiate(AllUnitPrefabs.Instance.getWeapon(unit.equipmentHolder.startingWeapon));
         // Set the weapon's parent while preserving its world position, rotation, and scale
-        spawnedWeapon.transform.SetParent(unit.weaponLocation.transform,true);
-        spawnedWeapon.transform.localPosition = Vector3.zero;
+        //spawnedWeapon.transform.SetParent(unit.weaponLocation.transform,true);
+        //spawnedWeapon.transform.localPosition = Vector3.zero;
         unit.equipmentHolder.addItem(spawnedWeapon.GetComponent<Item>());
-
-
-        spawnedWeapon.GetComponent<Weapon>().setup(newEnemy.unit, newEnemy.animationHelper);
+        //spawnedWeapon.GetComponent<Weapon>().equipped(newEnemy.unit, newEnemy.animationHelper);
 
         GetComponent<SpriteRenderer>().enabled = false;
     }

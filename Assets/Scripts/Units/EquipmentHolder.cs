@@ -10,11 +10,17 @@ public class EquipmentHolder : MonoBehaviour
     public AllUnitPrefabs.WeaponName startingWeapon;
     private Dictionary<SlotType, Item> equipment = new Dictionary<SlotType, Item>();
 
+    private Unit unit;
+
     /*public class EquipmentSlot
     {
         public Item item;
         public SlotType slotType;
     }*/
+    private void Awake()
+    {
+        unit = GetComponent<Unit>();
+    }
 
     public enum SlotType
     {
@@ -45,14 +51,14 @@ public class EquipmentHolder : MonoBehaviour
             }
 
             // Unequip the outgoing item if it's not the choice item
-            GetComponent<Unit>().deleteModifier(outgoingItem);
+            unit.deleteModifier(outgoingItem);
             Destroy(outgoingItem.gameObject);
         }
 
         // Equip the choice item
         equipment[choiceItem.slotType] = choiceItem;
-        GetComponent<Unit>().addModifier(choiceItem);
-        choiceItem.equipped();
+        unit.addModifier(choiceItem);
+        choiceItem.equipped(unit, unit.GetComponent<CreatureAnimatorHelper>());
     }
 
 

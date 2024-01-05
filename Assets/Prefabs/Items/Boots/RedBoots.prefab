@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc962f06ef89bd42b062f3c9aebc905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickedUp: 0
+  disableOnEquip: 1
   modifications:
   - statType: 3
     amount: 0.75
