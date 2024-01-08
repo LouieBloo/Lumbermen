@@ -11,11 +11,11 @@ public class ChooseItemHandler : MonoBehaviour
 
     public TMP_Text outgoingItemNameText;
     public TMP_Text outgoingItemDescription;
-    public RawImage outgoingItemImage;
+    public Image outgoingItemImage;
 
     public TMP_Text incomingItemNameText;
     public TMP_Text incomingItemDescription;
-    public RawImage incomingItemImage;
+    public Image incomingItemImage;
 
     public static ChooseItemHandler Instance { get; private set; }
 
@@ -47,11 +47,11 @@ public class ChooseItemHandler : MonoBehaviour
         
         ui.SetActive(true);
 
-        outgoingItemImage.texture = outgoingItem.getSprite().texture;
+        outgoingItemImage.sprite = outgoingItem.getSprite();
         outgoingItemNameText.text = outgoingItem.getName();
         outgoingItemDescription.text = outgoingItem.getDescription();
 
-        incomingItemImage.texture = incomingItem.getSprite().texture;
+        incomingItemImage.sprite = incomingItem.getSprite();
         incomingItemNameText.text = incomingItem.getName();
         incomingItemDescription.text = incomingItem.getDescription();
     }

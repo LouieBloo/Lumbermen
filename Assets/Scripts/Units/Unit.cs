@@ -70,6 +70,11 @@ public class Unit : MonoBehaviour
             return total;
         }
 
+        public void unSubscribe(Action<float> callback)
+        {
+            callbacks.Remove(callback);
+        }
+
         public void modifyAmount(float amountToModify)
         {
             amount += amountToModify;
@@ -133,6 +138,14 @@ public class Unit : MonoBehaviour
         }
 
         return 0;
+    }
+
+    public void unSubscribeToStat(StatTypes type, Action<float> callback)
+    {
+        if (stats.TryGetValue(type, out UnitStat targetStat))
+        {
+            targetStat.unSubscribe(callback);
+        }
     }
 
     public float strength { get { return stats[StatTypes.Strength].total; }  }

@@ -45,6 +45,13 @@ public class Weapon : Item
         animationHelper.subscribeAttack(attackAnimationFinished);
     }
 
+    protected void OnDestroy()
+    {
+        if(unit == null) { return; }
+        unit.unSubscribeToStat(Unit.StatTypes.AttackSpeed, attackSpeedAnimationUpdate);
+        unit.unSubscribeToStat(Unit.StatTypes.Agility, attackSpeedAnimationUpdate);
+    }
+
     public override void equipped(Unit unit, CreatureAnimatorHelper animationHelperIn)
     {
         base.equipped(unit, animationHelperIn);

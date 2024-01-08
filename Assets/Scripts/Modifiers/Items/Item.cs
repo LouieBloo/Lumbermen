@@ -8,10 +8,13 @@ public class Item : MonoBehaviour, IModifier
     public bool pickedUp = false;
 
     [SerializeField]
-    private bool disableOnEquip = true;
+    protected bool disableOnEquip = true;
 
     [SerializeField]
-    private SpriteRenderer iconSpriteRenderer;
+    private Sprite iconSprite;
+
+    [SerializeField]
+    protected SpriteRenderer spriteRenderer;
 
     [SerializeField]
     private Modification[] modifications;
@@ -29,8 +32,8 @@ public class Item : MonoBehaviour, IModifier
 
     public Sprite getSprite()
     {
-        if(iconSpriteRenderer!= null)
-            return iconSpriteRenderer.sprite;
+        if(iconSprite != null)
+            return iconSprite;
 
         return GetComponent<SpriteRenderer>().sprite;
     }

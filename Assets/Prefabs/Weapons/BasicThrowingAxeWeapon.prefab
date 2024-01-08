@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickedUp: 0
   disableOnEquip: 0
-  iconSpriteRenderer: {fileID: 3248515533220560479}
+  iconSprite: {fileID: 1812728040, guid: 61555466aaa8dab48b0bfe24f033f75b, type: 3}
   modifications: []
   name: 
   slotType: 2
@@ -68,7 +68,7 @@ MonoBehaviour:
   animationHelper: {fileID: 4779909985076904965}
   autoAttackTurnOnRadius: 10
   projectileName: 0
-  projectileSpeed: 5
+  projectileSpeed: 10
 --- !u!114 &4779909985076904965
 MonoBehaviour:
   m_ObjectHideFlags: 0

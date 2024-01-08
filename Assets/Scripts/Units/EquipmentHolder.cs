@@ -10,6 +10,8 @@ public class EquipmentHolder : MonoBehaviour
     public AllUnitPrefabs.WeaponName startingWeapon;
     private Dictionary<SlotType, Item> equipment = new Dictionary<SlotType, Item>();
 
+    private List<Powerup> powerups = new List<Powerup>();
+
     private Unit unit;
 
     /*public class EquipmentSlot
@@ -24,12 +26,12 @@ public class EquipmentHolder : MonoBehaviour
 
     public enum SlotType
     {
-        Helmet, Feet, Weapon, None
+        Helmet, Feet, Weapon, Powerup, None
     }
 
     public void addItem(Item item)
     {
-        if (equipment.TryGetValue(item.slotType, out Item targetItem))
+        if (item.slotType != SlotType.Powerup && equipment.TryGetValue(item.slotType, out Item targetItem))
         {
             //bring up ui so player can choose which to keep
             ChooseItemHandler.Instance.chooseItem(equipItem, targetItem, item);
@@ -50,16 +52,32 @@ public class EquipmentHolder : MonoBehaviour
                 return;  // If outgoing item is the choice item, we're done
             }
 
-            // Unequip the outgoing item if it's not the choice item
-            unit.deleteModifier(outgoingItem);
-            Destroy(outgoingItem.gameObject);
+            removeItem(outgoingItem);
         }
 
         // Equip the choice item
-        equipment[choiceItem.slotType] = choiceItem;
+        if(choiceItem.slotType == SlotType.Powerup)
+        {
+            powerups.Add(choiceItem.GetComponent<Powerup>());
+        }
+        else
+        {
+            equipment[choiceItem.slotType] = choiceItem;
+        }
+        
         unit.addModifier(choiceItem);
         choiceItem.equipped(unit, unit.GetComponent<CreatureAnimatorHelper>());
     }
 
+    public void removeItem(Item itemToRemove)
+    {
+        if (itemToRemove.slotType == SlotType.Powerup)
+        {
+            powerups.Remove(itemToRemove.GetComponent<Powerup>());
+        }
 
+        // Unequip the outgoing item if it's not the choice item
+        unit.deleteModifier(itemToRemove);
+        Destroy(itemToRemove.gameObject);
+    }
 }
