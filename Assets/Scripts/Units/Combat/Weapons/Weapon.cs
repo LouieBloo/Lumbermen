@@ -65,6 +65,12 @@ public class Weapon : Item
 
         transform.SetParent(unit.weaponLocation.transform, true);
         transform.localPosition = Vector3.zero;
+
+        //if the direction flipper is backwards we need to make sure to flip our x scale
+        if(transform.localScale.x < 0)
+        {
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
     }
 
     protected virtual void Update()

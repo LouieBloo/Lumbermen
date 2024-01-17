@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 
 public class UnitGrid : MonoBehaviour
@@ -10,12 +12,13 @@ public class UnitGrid : MonoBehaviour
     public int xOffset;
     public int yOffset;
     public static UnitGrid Instance { get; private set; }
+    public Tilemap pathfindingTilemap;
 
     private System.Random rand = new System.Random();
 
     public enum UnitTypes
     {
-        Empty, Tree, Sprout, Stump
+        Empty, Tree, Sprout, Stump, Blocker
     }
 
     public class GridCell
@@ -57,6 +60,44 @@ public class UnitGrid : MonoBehaviour
         {
             fillCell(tree.transform.position, tree, UnitTypes.Tree);
         }
+
+        BoundsInt bounds = pathfindingTilemap.cellBounds;
+        TileBase[] allTiles = pathfindingTilemap.GetTilesBlock(bounds);
+
+
+        for (int n = pathfindingTilemap.cellBounds.xMin; n < pathfindingTilemap.cellBounds.xMax; n++)
+        {
+            for (int p = pathfindingTilemap.cellBounds.yMin; p < pathfindingTilemap.cellBounds.yMax; p++)
+            {
+                Vector3Int localPlace = (new Vector3Int(n, p, (int)pathfindingTilemap.transform.position.y));
+                Vector3 place = pathfindingTilemap.CellToWorld(localPlace);
+                if (pathfindingTilemap.HasTile(localPlace))
+                {
+                    //Tile at "place"
+                    fillCell(new Vector3(place.x + 0.5f, place.y + 0.5f), null, UnitTypes.Blocker);
+                }
+                else
+                {
+                    //No tile at "place"
+                }
+            }
+        }
+
+        /*for (int x = 0; x < bounds.size.x; x++)
+        {
+            for (int y = 0; y < bounds.size.y; y++)
+            {
+                TileBase tile = allTiles[x + y * bounds.size.x];
+                if (tile != null)
+                {
+                    Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
+                    Debug.Log(pathfindingTilemap.GetCellCenterWorld(new Vector3Int(x, y)));
+                    //Debug.Log(pathfindingTilemap.CellToWorld(new Vector3Int(x, y)));
+                    fillCell(pathfindingTilemap.GetCellCenterWorld(new Vector3Int(x, y)), null, UnitTypes.Blocker);
+                }
+                
+            }
+        }*/
     }
 
     private void Update()
