@@ -27,7 +27,6 @@ public class Player : MonoBehaviour, IDier
         unit = GetComponent<Unit>();
 
         stats[StatTypes.Gold] = new PlayerStats(StatTypes.Gold,0);
-
     }
 
     private void Start()
@@ -58,6 +57,11 @@ public class Player : MonoBehaviour, IDier
     public float modifyStat(StatTypes type, float amount)
     {
         stats[type].modifyAmount(amount);
+        return stats[type].amount;
+    }
+
+    public float checkStat(StatTypes type)
+    {
         return stats[type].amount;
     }
 

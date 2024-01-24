@@ -1,18 +1,36 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static AllUnitPrefabs;
 
 public class Market : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Serializable]
+    public class MarketSectionUI
     {
-        
+        [SerializeField]
+        public string header;
+
+        [SerializeField]
+        public MarketItem[] items;
     }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    public Transform sectionSpawnPoint;
+
+    [SerializeField]
+    public GameObject sectionPrefab;
+
+    [SerializeField]
+    public MarketSectionUI[] sections;
+
+    void Start()
     {
-        
+        foreach(MarketSectionUI marketSection in sections)
+        {
+            GameObject section = Instantiate(sectionPrefab, sectionSpawnPoint);
+            section.GetComponent<MarketSection>().setup(marketSection);
+        }
     }
 }
