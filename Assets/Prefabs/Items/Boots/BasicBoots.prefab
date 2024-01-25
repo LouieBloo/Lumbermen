@@ -47,10 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc962f06ef89bd42b062f3c9aebc905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickedUp: 0
+  disableOnEquip: 1
+  iconSprite: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   modifications:
   - statType: 3
-    amount: 5
-  name: Brown Boots
+    amount: 0.5
+  itemName: Basic Boots
   slotType: 1
 --- !u!114 &5014635140445832325
 MonoBehaviour:

@@ -10,6 +10,8 @@ public class Player : MonoBehaviour, IDier
     public static Player Instance { get; private set; }
     public Unit unit;
 
+    public float startingGold;
+
     Dictionary<StatTypes, PlayerStats> stats = new Dictionary<StatTypes, PlayerStats>();
 
     private void Awake()
@@ -26,7 +28,7 @@ public class Player : MonoBehaviour, IDier
 
         unit = GetComponent<Unit>();
 
-        stats[StatTypes.Gold] = new PlayerStats(StatTypes.Gold,0);
+        stats[StatTypes.Gold] = new PlayerStats(StatTypes.Gold, startingGold);
     }
 
     private void Start()

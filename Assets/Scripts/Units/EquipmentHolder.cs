@@ -33,6 +33,12 @@ public class EquipmentHolder : MonoBehaviour
     {
         if (item.slotType != SlotType.Powerup && equipment.TryGetValue(item.slotType, out Item targetItem))
         {
+            //if we already have a duplicate item equipped, dont allow it 
+            if (targetItem.itemName == item.itemName)
+            {
+                Destroy(item.gameObject);
+                return;
+            }
             //bring up ui so player can choose which to keep
             ChooseItemHandler.Instance.chooseItem(equipItem, targetItem, item);
         }

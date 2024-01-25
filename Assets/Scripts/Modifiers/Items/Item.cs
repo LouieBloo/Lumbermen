@@ -20,7 +20,7 @@ public class Item : MonoBehaviour, IModifier
     private Modification[] modifications;
 
     [SerializeField]
-    private string name;
+    public string itemName;
     public EquipmentHolder.SlotType slotType;
 
     protected Unit unit;

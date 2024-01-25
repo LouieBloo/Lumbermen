@@ -31,6 +31,22 @@ public class Train : MonoBehaviour
     private float waitingAtStopTimer = 0f;
     private float waitingAtStopCurrentWaitTime;
 
+    public Unit unit;
+
+    public static Train Instance;
+
+    void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        } 
+    }
+
     void Start()
     {
         startPoint = GameObject.FindGameObjectWithTag("TrainStart").transform.position;
@@ -45,6 +61,7 @@ public class Train : MonoBehaviour
         waitingAtStopCurrentWaitTime = waitAtStartTime;
         waitingAtStop = true;
 
+        unit.subscribeToStat(Unit.StatTypes.MovementSpeed, movementSpeedChanged);
         //SetTarget(trainStopPoint);
     }
 
@@ -128,6 +145,11 @@ public class Train : MonoBehaviour
                 SetTarget(allPoints[currentTarget]);
             }
         }
+    }
+
+    void movementSpeedChanged(float newSpeed)
+    {
+        this.maxSpeed = newSpeed;
     }
 
     void stoppedAtStation()

@@ -52,8 +52,9 @@ MonoBehaviour:
   pickedUp: 0
   disableOnEquip: 0
   iconSprite: {fileID: 1812728040, guid: 61555466aaa8dab48b0bfe24f033f75b, type: 3}
+  spriteRenderer: {fileID: 0}
   modifications: []
-  name: 
+  itemName: Basic Throwing Axe
   slotType: 2
   damage: 5
   damagePerAgility: 0

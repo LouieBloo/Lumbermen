@@ -21,11 +21,10 @@ public class GameStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player.Instance.subscribeToStat(Unit.StatTypes.Gold, modifyPlayerGold);
-        Debug.Log(Player.Instance.unit.strength);
-        Player.Instance.unit.subscribeToStat(Unit.StatTypes.Strength, modifyPlayerStrength);
-        Player.Instance.unit.subscribeToStat(Unit.StatTypes.Agility, modifyPlayerAgility);
-        Player.Instance.unit.subscribeToStat(Unit.StatTypes.Intelligence, modifyPlayerIntelligence);
+        modifyPlayerGold(Player.Instance.subscribeToStat(Unit.StatTypes.Gold, modifyPlayerGold));
+        modifyPlayerStrength(Player.Instance.unit.subscribeToStat(Unit.StatTypes.Strength, modifyPlayerStrength));
+        modifyPlayerAgility(Player.Instance.unit.subscribeToStat(Unit.StatTypes.Agility, modifyPlayerAgility));
+        modifyPlayerIntelligence(Player.Instance.unit.subscribeToStat(Unit.StatTypes.Intelligence, modifyPlayerIntelligence));
     }
 
     public void restartScene()

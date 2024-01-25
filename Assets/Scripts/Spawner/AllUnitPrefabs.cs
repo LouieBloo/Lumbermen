@@ -50,6 +50,8 @@ public class AllUnitPrefabs : MonoBehaviour
     public enum UnitName {
         BrownBear,
         Raven,
+        Lumberjack,
+        Train
     }
 
     public enum ItemName

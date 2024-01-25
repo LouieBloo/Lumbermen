@@ -52,8 +52,9 @@ MonoBehaviour:
   pickedUp: 0
   disableOnEquip: 0
   iconSprite: {fileID: -1932224687, guid: c18faa2e780741c42b5881bdabd9bb65, type: 3}
+  spriteRenderer: {fileID: 0}
   modifications: []
-  name: 
+  itemName: Basic Axe
   slotType: 2
   damage: 10
   damagePerAgility: 0

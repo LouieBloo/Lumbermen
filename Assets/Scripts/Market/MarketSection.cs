@@ -14,7 +14,7 @@ public class MarketSection : MonoBehaviour
     public Transform buttonSpawnLocation;
 
     [SerializeField]
-    public TextMeshProUGUI storageText;
+    public TextMeshProUGUI headerText;
 
     private MarketSectionUI marketSection;
 
@@ -31,7 +31,7 @@ public class MarketSection : MonoBehaviour
 
     public void setup(MarketSectionUI marketSection)
     {
-        storageText.text = marketSection.header;
+        headerText.text = marketSection.header;
         this.marketSection = marketSection;
     }
 

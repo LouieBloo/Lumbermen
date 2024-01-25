@@ -11,15 +11,32 @@ public class MarketItem
     [SerializeField]
     public string name;
     [SerializeField]
+    public string description;
+    [SerializeField]
     public int cost;
+    [SerializeField]
+    public int level = 0;
     [SerializeField]
     public int costIncreaseEachPurchase;
 
     [SerializeField]
-    public StatTypes statToModifty;
+    public AllUnitPrefabs.UnitName unitToModify;
+
     [SerializeField]
-    public float amount;
-    
+    public ItemUIArray[] statsToModify;
+
+    [Serializable]
+    public class ItemUIArray
+    {
+        [SerializeField]
+        public StatTypes statToModifty;
+        [SerializeField]
+        public float amount;
+    }
+
+
+    private List<Action<int>> costChangeCallbacks = new List<Action<int>>();
+    private List<Action<int>> levelChangeCallbacks = new List<Action<int>>();
 
     public void buy(Player player)
     {
@@ -27,8 +44,49 @@ public class MarketItem
 
         player.modifyStat(StatTypes.Gold, -cost);
 
-        player.unit.modifyStat(statToModifty, amount);
+        Unit targetUnit = player.unit;
+
+        switch (unitToModify)
+        {
+            case AllUnitPrefabs.UnitName.Train:
+                targetUnit = Train.Instance.unit;
+                break;
+        }
+
+        foreach (ItemUIArray itemUI in statsToModify)
+        {
+            targetUnit.modifyStat(itemUI.statToModifty, itemUI.amount);
+        }
 
         cost += costIncreaseEachPurchase;
+        level++;
+
+        flushCallbacks();
+    }
+
+    public int subscribeToCostChange(Action<int> callback)
+    {
+        costChangeCallbacks.Add(callback);
+        flushCallbacks();
+        return cost;
+    }
+
+    public int subscribeToLevelChange(Action<int> callback)
+    {
+        levelChangeCallbacks.Add(callback);
+        flushCallbacks();
+        return level;
+    }
+
+    private void flushCallbacks()
+    {
+        foreach (var callback in costChangeCallbacks)
+        {
+            callback(cost);
+        }
+        foreach (var callback in levelChangeCallbacks)
+        {
+            callback(level);
+        }
     }
 }

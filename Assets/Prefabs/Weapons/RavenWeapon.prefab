@@ -131,9 +131,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a78e13c0ae0764e97d7f12b3de0daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickedUp: 0
   disableOnEquip: 0
+  iconSprite: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   modifications: []
-  name: 
+  name: Raven Weapon
   slotType: 2
   damage: 5
   damagePerAgility: 0
