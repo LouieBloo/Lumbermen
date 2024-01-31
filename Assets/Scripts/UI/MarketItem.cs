@@ -51,13 +51,24 @@ public class MarketItem
             case AllUnitPrefabs.UnitName.Train:
                 targetUnit = Train.Instance.unit;
                 break;
+            case AllUnitPrefabs.UnitName.TrainDropoff:
+                targetUnit = null;
+                if (statsToModify[0].statToModifty == StatTypes.TrainDropoffCount)
+                {
+                    TrainStop.Instance.upgrateDropoffCount();
+                }
+                
+                break;
         }
 
-        foreach (ItemUIArray itemUI in statsToModify)
+        if (targetUnit)
         {
-            targetUnit.modifyStat(itemUI.statToModifty, itemUI.amount);
+            foreach (ItemUIArray itemUI in statsToModify)
+            {
+                targetUnit.modifyStat(itemUI.statToModifty, itemUI.amount);
+            }
         }
-
+        
         cost += costIncreaseEachPurchase;
         level++;
 

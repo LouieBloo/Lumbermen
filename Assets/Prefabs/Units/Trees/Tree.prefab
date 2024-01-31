@@ -19,7 +19,7 @@ GameObject:
   m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7374085990713178694
 Transform:
@@ -56,8 +56,15 @@ MonoBehaviour:
   baseMaximumHealth: 10
   baseHealthRegen: 0
   baseAttackSpeed: 0
+  baseAttackRange: 1
+  baseAttackDamage: 1
+  baseAttackRadius: 1
   baseMaxHealthPerStrength: 0
   baseHealthRegenPerStrength: 0
+  isEnemy: 1
+  baseMovementType: 0
+  equipmentHolder: {fileID: 0}
+  weaponLocation: {fileID: 0}
 --- !u!114 &5379373011437662334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +79,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hurtAudioClipVolume: 1
   hurtAudioClip: {fileID: 8300000, guid: 340b7f9f662b10a488638a8448e03b8a, type: 3}
+  damageParticlePrefab: {fileID: 0}
   healthBar: {fileID: 0}
+  unit: {fileID: 0}
 --- !u!114 &6613970006900976236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +159,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &197607322373477933
 Transform:

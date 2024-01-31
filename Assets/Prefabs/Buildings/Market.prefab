@@ -135,6 +135,15 @@ MonoBehaviour:
       statsToModify:
       - statToModifty: 3
         amount: 20
+    - name: Dropoff Count
+      description: 
+      cost: 100
+      level: 0
+      costIncreaseEachPurchase: 100
+      unitToModify: 4
+      statsToModify:
+      - statToModifty: 15
+        amount: 1
   - header: Market
     items:
     - name: Sell Price

@@ -31,6 +31,8 @@ public class Unit : MonoBehaviour
     private float baseMaxHealthPerStrength = 1f;
     [SerializeField]
     private float baseHealthRegenPerStrength = 1f;
+    [SerializeField]
+    private float baseMaxBackpackCapacity = 10f;
 
     public bool isEnemy = true;
 
@@ -102,7 +104,14 @@ public class Unit : MonoBehaviour
         Health, HealthRegen, MaxHealth, 
         AttackSpeed, AttackDamage, AttackRange, IsMelee, AttackRadius,
         MaxHealthPerStrength, HealthRegenPerStrength,
-        Gold
+        Gold,
+
+        //train
+        TrainDropoffCount,
+
+        //logs
+        MaxBackpackCapacity,
+        BackpackCurrentCapacity
     }
 
     private void Awake()
@@ -120,6 +129,8 @@ public class Unit : MonoBehaviour
         stats[StatTypes.AttackRange] = new UnitStat(StatTypes.AttackRange, baseAttackRange);
         stats[StatTypes.AttackDamage] = new UnitStat(StatTypes.AttackDamage, baseAttackDamage);
         stats[StatTypes.AttackRadius] = new UnitStat(StatTypes.AttackRadius, baseAttackRadius);
+        stats[StatTypes.MaxBackpackCapacity] = new UnitStat(StatTypes.MaxBackpackCapacity, baseMaxBackpackCapacity);
+        stats[StatTypes.BackpackCurrentCapacity] = new UnitStat(StatTypes.BackpackCurrentCapacity, 0);
     }
 
     public void modifyStat(StatTypes type, float amount)
@@ -175,6 +186,10 @@ public class Unit : MonoBehaviour
     public float attackRange { get { return stats[StatTypes.AttackRange].total; } }
     public float attackDamage { get { return stats[StatTypes.AttackDamage].total; } }
     public float attackRadius { get { return stats[StatTypes.AttackRadius].total; } }
+
+    public float maxBackpackCapacity { get { return stats[StatTypes.MaxBackpackCapacity].total; } }
+
+    public float backpackCurrentCapcity { get { return stats[StatTypes.BackpackCurrentCapacity].total; } }
 
     public BasicUnitMovement.MovementType movementType { get { return baseMovementType; } }
 

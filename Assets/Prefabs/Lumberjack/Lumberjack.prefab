@@ -678,6 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 1296747796352964704}
+  startingGold: 0
 --- !u!114 &1296747796352964704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,6 +703,7 @@ MonoBehaviour:
   baseAttackRadius: 0
   baseMaxHealthPerStrength: 5
   baseHealthRegenPerStrength: 0.01
+  baseMaxBackpackCapacity: 100
   isEnemy: 1
   baseMovementType: 0
   equipmentHolder: {fileID: 7969113412132729832}
@@ -812,7 +814,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb9b71c0b962a04dbecf9a41e1e4dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCapacity: 100
   warningPrefabText: {fileID: 1088038332278998732, guid: f804c5c17c721fa44a6b20c9facd4856, type: 3}
 --- !u!114 &5016391956913786178
 MonoBehaviour:

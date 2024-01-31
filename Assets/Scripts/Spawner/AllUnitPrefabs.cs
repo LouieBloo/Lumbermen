@@ -51,7 +51,8 @@ public class AllUnitPrefabs : MonoBehaviour
         BrownBear,
         Raven,
         Lumberjack,
-        Train
+        Train,
+        TrainDropoff
     }
 
     public enum ItemName

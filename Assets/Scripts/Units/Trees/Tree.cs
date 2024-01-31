@@ -16,12 +16,6 @@ public class Tree : MonoBehaviour, IDier, IDespawnedPoolObject, IRetrievedPoolOb
         //RetrievedFromPool(null);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void setup()
     {
         UnitGrid.Instance.fillCell(transform.position, this.gameObject, UnitGrid.UnitTypes.Tree);

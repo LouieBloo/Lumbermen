@@ -12,6 +12,7 @@ public class GameStats : MonoBehaviour
     public TMP_Text agilityText;
     public TMP_Text intText;
     public TMP_Text gameTimeText;
+    public TMP_Text backpackText;
 
     private float gameTime;
     private float gameTimeUpdaterDelay;
@@ -25,6 +26,9 @@ public class GameStats : MonoBehaviour
         modifyPlayerStrength(Player.Instance.unit.subscribeToStat(Unit.StatTypes.Strength, modifyPlayerStrength));
         modifyPlayerAgility(Player.Instance.unit.subscribeToStat(Unit.StatTypes.Agility, modifyPlayerAgility));
         modifyPlayerIntelligence(Player.Instance.unit.subscribeToStat(Unit.StatTypes.Intelligence, modifyPlayerIntelligence));
+
+        modifyPlayerBackpack(Player.Instance.unit.subscribeToStat(Unit.StatTypes.BackpackCurrentCapacity, modifyPlayerBackpack));
+        modifyPlayerBackpack(Player.Instance.unit.subscribeToStat(Unit.StatTypes.MaxBackpackCapacity, modifyPlayerBackpack));
     }
 
     public void restartScene()
@@ -80,6 +84,8 @@ public class GameStats : MonoBehaviour
         intText.text = intelligence + "";
     }
 
-
-
+    private void modifyPlayerBackpack(float dontMatta)
+    {
+        backpackText.text = Player.Instance.unit.backpackCurrentCapcity + " / " + Player.Instance.unit.maxBackpackCapacity;
+    }
 }

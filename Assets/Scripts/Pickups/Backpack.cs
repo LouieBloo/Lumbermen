@@ -6,8 +6,6 @@ using static StorageContainer;
 
 public class Backpack : MonoBehaviour
 {
-    public int maxCapacity = 100;
-
     public DamageNumberGUI warningPrefabText;
 
     private float backpackFullWarningTimer = 10f;
@@ -15,9 +13,14 @@ public class Backpack : MonoBehaviour
 
     private StorageContainer container = new StorageContainer();
 
+    Unit unit;
+
     private void Start()
     {
-        container.maxCapacity = maxCapacity;
+        unit = GetComponent<Unit>();
+        unit.subscribeToStat(Unit.StatTypes.MaxBackpackCapacity, backpackMaxCapcityChanged);
+        //unit.subscribeToStat(Unit.StatTypes.BackpackCurrentCapacity, backpackCapcityChanged);
+        //container.maxCapacity = maxCapacity;
     }
 
     private void Update()
@@ -25,10 +28,16 @@ public class Backpack : MonoBehaviour
         backpackFullWarningTimer += Time.deltaTime;
     }
 
+    void backpackMaxCapcityChanged(float newCapacity)
+    {
+        container.maxCapacity = (int)newCapacity;
+    }
+
     public bool addItem(StorageItem item)
     {
         if (container.addItem(item))
         {
+            unit.modifyStat(Unit.StatTypes.BackpackCurrentCapacity, item.capacitySpace);
             return true;
         }
         else
@@ -47,6 +56,7 @@ public class Backpack : MonoBehaviour
     public void removeItem(StorageItem item)
     {
         container.removeItem(item);
+        unit.modifyStat(Unit.StatTypes.BackpackCurrentCapacity, -item.capacitySpace);
     }
 
 
