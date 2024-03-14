@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,14 @@ public class Enemy : MonoBehaviour, IDier
     public EnemyMovement movementScript;
 
     public HealthHaver healthHaver;
+
+    private Action deathCallback;
+
+    public void setup(AllUnitPrefabs.UnitName unitToSpawn, Action deathCallback)
+    {
+        this.unitName = unitToSpawn;
+        this.deathCallback = deathCallback;
+    }
 
     void Start()
     {
@@ -41,11 +50,14 @@ public class Enemy : MonoBehaviour, IDier
 
     void Update()
     {
-        
     }
 
     public void die(GameObject source)
     {
+        if(deathCallback != null)
+        {
+            deathCallback();
+        }
         Destroy(this.gameObject);
     }
 }

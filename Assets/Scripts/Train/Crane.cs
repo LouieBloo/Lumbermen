@@ -16,11 +16,14 @@ public class Crane : MonoBehaviour
     public bool rotating = false;
 
     private Transform targetObject;
+    private float dropOffDegree = 180;
+    private float trainDegree = 0;
+    private float targetDegree;
 
     private void Start()
     {
         hand.maxCapacity = 10;
-        moveToTarget(linkedLogDropoff.transform);
+        moveToTarget(linkedLogDropoff.transform, dropOffDegree);
         //StartCoroutine(RotateTowardsTarget(targetEulerAngle));
     }
 
@@ -30,7 +33,7 @@ public class Crane : MonoBehaviour
 
         if (hand.currentCapacity != 0)
         {
-            moveToTarget(linkedTrain);
+            moveToTarget(linkedTrain, trainDegree);
         }
         
     }
@@ -65,15 +68,16 @@ public class Crane : MonoBehaviour
                 {
                     hand.addItem(linkedLogDropoff.removeItem(logs[0]));
                     logInHand.SetActive(true);
-                    moveToTarget(linkedTrain);
+                    moveToTarget(linkedTrain, trainDegree);
                 }
             }
         }
     } 
 
-    void moveToTarget(Transform target)
+    void moveToTarget(Transform target, float degree)
     {
         targetObject = target;
+        targetDegree = degree;
         rotating = true;
         currentRotation = 0;
     }
@@ -86,7 +90,7 @@ public class Crane : MonoBehaviour
             //market?
             logInHand.SetActive(false);
             Player.Instance.modifyStat(Unit.StatTypes.Gold, 10);
-            moveToTarget(linkedLogDropoff.transform);
+            moveToTarget(linkedLogDropoff.transform, dropOffDegree);
         }
         else if(targetObject == linkedLogDropoff.transform)
         {
@@ -94,6 +98,36 @@ public class Crane : MonoBehaviour
     }
 
     void RotateTowardsTarget()
+    {
+        // Calculate the difference between the current rotation and the target rotation
+        float angleDifference = Mathf.DeltaAngle(transform.rotation.eulerAngles.z, targetDegree);
+
+        // If the difference is negligible, we're already rotated to the target degree
+        if (Mathf.Abs(angleDifference) < 0.01f)
+        {
+            rotating = false;
+
+            doneRotating();
+            return;
+        }
+
+        // Calculate the rotation direction (clockwise or counterclockwise)
+        float rotationDirection = Mathf.Sign(angleDifference);
+
+        // Calculate the amount of rotation for this frame based on the rotation speed
+        float rotationAmount = rotationSpeed * Time.deltaTime * rotationDirection;
+
+        // If the rotation amount exceeds the remaining angle difference, adjust it
+        if (Mathf.Abs(rotationAmount) > Mathf.Abs(angleDifference))
+        {
+            rotationAmount = angleDifference;
+        }
+
+        // Apply rotation
+        transform.Rotate(Vector3.forward, rotationAmount);
+    }
+
+    void RotateTowardsTargetBackup()
     {
         if (targetObject == null) return; // If no target is set, don't proceed
 

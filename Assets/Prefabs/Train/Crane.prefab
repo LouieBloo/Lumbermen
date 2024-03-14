@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cccd364de4399664c999d5204c9a1928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0.1
+  rotationSpeed: 180
   linkedTrain: {fileID: 0}
   linkedLogDropoff: {fileID: 0}
   logInHand: {fileID: 7704416333224600581}
@@ -176,7 +176,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1475964063
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2dbb6724ee00c8a4ebc2c4a5da27989b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -55,7 +55,7 @@ MonoBehaviour:
   baseStrength: 0
   baseAgility: 0
   baseIntelligence: 0
-  baseMovementSpeed: 0
+  baseMovementSpeed: 1
   baseMaximumHealth: 10
   baseHealthRegen: 0
   baseAttackSpeed: 0
@@ -64,6 +64,7 @@ MonoBehaviour:
   baseAttackRadius: 0
   baseMaxHealthPerStrength: 0
   baseHealthRegenPerStrength: 0
+  baseMaxBackpackCapacity: 10
   isEnemy: 1
   baseMovementType: 1
   equipmentHolder: {fileID: -92589476866394468}

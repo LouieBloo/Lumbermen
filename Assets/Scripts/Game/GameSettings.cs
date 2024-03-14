@@ -21,6 +21,7 @@ public class GameSettings : MonoBehaviour
         if (Application.platform == RuntimePlatform.Android)
         {
             isMobile = true;
+            joystick.gameObject.SetActive(true);
             Application.targetFrameRate = 60;
         }
         else
